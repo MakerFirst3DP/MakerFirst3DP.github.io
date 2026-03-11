@@ -33,8 +33,12 @@ const steps = [
 ];
 ---
 
-<section id="process" class="py-24 bg-neutral-100 md:py-32">
-  <div class="mx-auto max-w-6xl px-6">
+<section id="process" class="relative py-24 bg-neutral-100 md:py-32 overflow-hidden">
+  <!-- Subtle grid pattern overlay -->
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true"
+       style="background-image: url('/svg/decorative/grid-pattern.svg'); background-size: 100px 100px; background-repeat: repeat; opacity: 0.5;">
+  </div>
+  <div class="relative mx-auto max-w-6xl px-6">
 
     <div class="max-w-2xl mb-16">
       <p class="mb-3 text-xs font-semibold tracking-[0.15em] uppercase text-brand-accent">
@@ -73,6 +77,7 @@ const steps = [
       </ol>
     </div>
 
+  </div>
   </div>
 </section>
 

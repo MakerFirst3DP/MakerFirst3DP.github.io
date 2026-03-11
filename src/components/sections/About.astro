@@ -1,4 +1,6 @@
 ---
+import sectionDivider from '/public/svg/decorative/section-divider.svg?raw';
+
 const principles = [
   {
     label: 'Engineers, not generalists',
@@ -14,6 +16,11 @@ const principles = [
   },
 ];
 ---
+
+<!-- Section divider: white → dark transition. currentColor inherits navy from parent. -->
+<div class="bg-white overflow-hidden leading-none text-brand-primary" aria-hidden="true">
+  <Fragment set:html={sectionDivider} />
+</div>
 
 <section id="about" class="py-24 bg-brand-primary md:py-32">
   <div class="mx-auto max-w-6xl px-6">
