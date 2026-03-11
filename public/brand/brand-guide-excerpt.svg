@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  MakerFirst Brand Guide Excerpt  —  Visual Spec Sheet
+  ======================================================
+  Contents:
+    1. Logomark with safe-zone guides
+    2. Color swatches (Navy + Amber) with Hex & CMYK values
+    3. Minimum size notes
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 400" width="540" height="400">
+  <defs>
+    <style>
+      .navy-stroke { fill: none; stroke: #0f172a; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+      .amber-stroke { fill: none; stroke: #f59e0b; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+      .navy-fill   { fill: #0f172a; stroke: none; }
+      .amber-fill  { fill: #f59e0b; stroke: none; }
+      .guide       { fill: none; stroke: #e11d48; stroke-width: 0.5; stroke-dasharray: 3,2; }
+      .guide-fill  { fill: #e11d48; opacity: 0.06; stroke: none; }
+      .dim-line    { fill: none; stroke: #64748b; stroke-width: 0.5; }
+      .dim-arrow   { fill: #64748b; stroke: none; }
+      .heading {
+        font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+        fill: #0f172a;
+      }
+      .label {
+        font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+        font-weight: 600;
+        font-size: 10px;
+        fill: #334155;
+      }
+      .spec {
+        font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+        font-weight: 400;
+        font-size: 9px;
+        fill: #475569;
+      }
+      .note {
+        font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+        font-weight: 400;
+        font-size: 9px;
+        fill: #64748b;
+      }
+      .section-border { fill: none; stroke: #e2e8f0; stroke-width: 1; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="540" height="400" fill="#ffffff" rx="4"/>
+
+  <!-- ========================================================== -->
+  <!-- SECTION 1: Logomark with Safe Zone Guides                  -->
+  <!-- ========================================================== -->
+  <text class="heading" x="24" y="30">1. Logomark &amp; Safe Zone</text>
+
+  <!-- Safe-zone outer boundary (the full 64x64 square, drawn at 2x = 128x128) -->
+  <g transform="translate(40, 50)">
+    <!-- Safe zone fill -->
+    <rect class="guide-fill" x="0" y="0" width="128" height="128"/>
+
+    <!-- Safe zone border -->
+    <rect class="guide" x="0" y="0" width="128" height="128"/>
+
+    <!-- Inner active area (48x48 at 2x = 96x96, offset 16px at 2x from each side) -->
+    <rect class="guide" x="16" y="16" width="96" height="96"/>
+
+    <!-- Logomark at 2x scale, centered -->
+    <g transform="translate(0,0) scale(2)">
+      <!-- Gear -->
+      <path class="navy-stroke" d="
+        M 32 10
+        L 34.5 10  L 35.5 13  L 37 13.5
+        A 15 15 0 0 1 40.5 15.5
+        L 42 14.5  L 44 16.5  L 43 18
+        A 15 15 0 0 1 45.5 22
+        L 48.5 21.5  L 49.5 24  L 47 25.5
+        A 15 15 0 0 1 49 29
+        L 49 29  L 51 30.5  L 51 33
+        L 49 33.5
+        A 15 15 0 0 1 47.5 38
+        L 49.5 40  L 48.5 42.5  L 45.5 42
+        A 15 15 0 0 1 43 45.5
+        L 44 47.5  L 42 49.5  L 40 48
+        A 15 15 0 0 1 37 50
+        L 37 50  L 35.5 51  L 34.5 54
+        L 32 54
+        L 29.5 54  L 28.5 51  L 27 50
+        A 15 15 0 0 1 23.5 48.5
+        L 22 49.5  L 20 47.5  L 21 46
+        A 15 15 0 0 1 18.5 42
+        L 15.5 42.5  L 14.5 40  L 17 38.5
+        A 15 15 0 0 1 15 34
+        L 15 33.5  L 13 33  L 13 30.5
+        L 15 30
+        A 15 15 0 0 1 16.5 26
+        L 14.5 24  L 15.5 21.5  L 18.5 22
+        A 15 15 0 0 1 21 18.5
+        L 20 16.5  L 22 14.5  L 24 15.5
+        A 15 15 0 0 1 27 13.5
+        L 28.5 13  L 29.5 10
+        Z
+      "/>
+      <circle class="navy-stroke" cx="32" cy="32" r="9"/>
+      <line class="navy-stroke" x1="25" y1="25" x2="39" y2="39"/>
+      <path class="navy-stroke" d="M 22 22 L 25 19 L 28 22"/>
+      <rect class="navy-stroke" x="38" y="38" width="4" height="4" rx="0.5"/>
+      <polyline class="amber-stroke" points="37,13.5 40,10 46,10"/>
+      <circle class="amber-fill" cx="46" cy="10" r="1.5"/>
+      <polyline class="amber-stroke" points="27,50 24,53 18,53"/>
+      <circle class="amber-fill" cx="18" cy="53" r="1.5"/>
+      <polyline class="amber-stroke" points="49,29 53,29 53,25"/>
+      <circle class="amber-fill" cx="53" cy="25" r="1.5"/>
+      <polyline class="amber-stroke" points="15,34 11,34 11,38"/>
+      <circle class="amber-fill" cx="11" cy="38" r="1.5"/>
+      <circle class="amber-fill" cx="32" cy="32" r="2.5"/>
+    </g>
+
+    <!-- Dimension: top safe zone = 8px (shown as 16 at 2x) -->
+    <line class="dim-line" x1="135" y1="0" x2="145" y2="0"/>
+    <line class="dim-line" x1="135" y1="16" x2="145" y2="16"/>
+    <line class="dim-line" x1="140" y1="0" x2="140" y2="16"/>
+    <text class="spec" x="148" y="11">8 px safe zone</text>
+    <text class="note" x="148" y="22">(12.5% of 64 px)</text>
+
+    <!-- Dimension: full width = 64px -->
+    <line class="dim-line" x1="0" y1="135" x2="0" y2="145"/>
+    <line class="dim-line" x1="128" y1="135" x2="128" y2="145"/>
+    <line class="dim-line" x1="0" y1="140" x2="128" y2="140"/>
+    <text class="spec" x="42" y="155">64 px</text>
+  </g>
+
+  <!-- Legend for guide lines -->
+  <g transform="translate(200, 60)">
+    <line class="guide" x1="0" y1="5" x2="20" y2="5"/>
+    <text class="note" x="26" y="8">Safe zone boundary</text>
+
+    <line x1="0" y1="22" x2="20" y2="22" stroke="#e11d48" stroke-width="0.5" stroke-dasharray="3,2"/>
+    <text class="note" x="26" y="25">Active area boundary</text>
+
+    <rect class="guide-fill" x="0" y="34" width="20" height="10"/>
+    <text class="note" x="26" y="42">Protected clear space</text>
+  </g>
+
+  <!-- ========================================================== -->
+  <!-- SECTION 2: Color Swatches                                  -->
+  <!-- ========================================================== -->
+  <line class="section-border" x1="24" y1="240" x2="516" y2="240"/>
+  <text class="heading" x="24" y="266">2. Brand Colors</text>
+
+  <!-- Navy swatch -->
+  <g transform="translate(40, 280)">
+    <rect width="80" height="50" rx="4" fill="#0f172a"/>
+    <text class="label" x="0" y="66">Navy</text>
+    <text class="spec" x="0" y="78">HEX  #0f172a</text>
+    <text class="spec" x="0" y="89">RGB  15, 23, 42</text>
+    <text class="spec" x="0" y="100">CMYK C:95 M:80 Y:45 K:60</text>
+  </g>
+
+  <!-- Amber swatch -->
+  <g transform="translate(200, 280)">
+    <rect width="80" height="50" rx="4" fill="#f59e0b"/>
+    <text class="label" x="0" y="66">Amber</text>
+    <text class="spec" x="0" y="78">HEX  #f59e0b</text>
+    <text class="spec" x="0" y="89">RGB  245, 158, 11</text>
+    <text class="spec" x="0" y="100">CMYK C:0 M:40 Y:95 K:0</text>
+  </g>
+
+  <!-- ========================================================== -->
+  <!-- SECTION 3: Minimum Size Notes                              -->
+  <!-- ========================================================== -->
+  <g transform="translate(380, 280)">
+    <text class="label" x="0" y="0">Minimum Sizes</text>
+
+    <!-- 16px example -->
+    <g transform="translate(0, 14)">
+      <rect width="16" height="16" rx="1" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5"/>
+      <text class="spec" x="22" y="12">16 x 16 px — favicon</text>
+    </g>
+
+    <!-- 32px example -->
+    <g transform="translate(0, 40)">
+      <rect width="32" height="32" rx="2" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5"/>
+      <text class="spec" x="38" y="14">32 x 32 px — nav icon</text>
+      <text class="note" x="38" y="26">(recommended minimum)</text>
+    </g>
+
+    <!-- 48px example -->
+    <g transform="translate(0, 82)">
+      <rect width="48" height="48" rx="3" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5"/>
+      <text class="spec" x="54" y="20">48 x 48 px — app icon</text>
+    </g>
+
+    <!-- Print minimum -->
+    <text class="note" x="0" y="148">Print minimum: 10 mm / 0.4 in</text>
+  </g>
+</svg>

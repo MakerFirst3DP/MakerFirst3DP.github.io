@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://makerfirst.ca/sitemap-index.xml
