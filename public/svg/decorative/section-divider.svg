@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 48" preserveAspectRatio="none" fill="currentColor">
+  <path d="M0 48V20L360 8l360 16 360-12 360 12V48z" opacity="0.05"/>
+  <path d="M0 48V28L480 16l480 12 480-8V48z" opacity="0.04"/>
+  <path d="M0 48V36l720-6 720 6v12z" opacity="0.03"/>
+</svg>

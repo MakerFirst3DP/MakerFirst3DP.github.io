@@ -1,0 +1,85 @@
+---
+---
+
+<section
+  class="relative min-h-screen flex flex-col justify-center overflow-hidden bg-brand-primary pt-16"
+  aria-label="Hero"
+>
+  <!-- Parallax background -->
+  <div
+    class="parallax-bg absolute inset-0 text-white pointer-events-none select-none"
+    aria-hidden="true"
+  >
+    <img
+      src="/svg/decorative/hero-parallax.svg"
+      class="w-full h-full object-cover opacity-[0.06]"
+      alt=""
+      fetchpriority="low"
+      loading="eager"
+    />
+  </div>
+
+  <!-- Gradient fade at bottom -->
+  <div
+    class="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
+    style="background: linear-gradient(to bottom, transparent, var(--color-brand-primary));"
+    aria-hidden="true"
+  ></div>
+
+  <div class="relative mx-auto max-w-6xl px-6 py-24 md:py-32">
+    <div class="max-w-3xl">
+      <p class="mb-6 text-xs font-semibold tracking-[0.15em] uppercase text-brand-accent/80">
+        Engineering Consulting
+      </p>
+
+      <h1 class="text-5xl font-bold tracking-tight text-white leading-[1.1] md:text-6xl lg:text-7xl">
+        We build<br />the hard&nbsp;stuff.
+      </h1>
+
+      <p class="mt-6 text-lg text-white/60 leading-relaxed max-w-xl md:text-xl">
+        MakerFirst takes ideas from napkin sketch to production hardware —
+        launch devices, AI-powered systems, and embedded firmware, all
+        engineered to ship.
+      </p>
+
+      <div class="mt-10 flex flex-wrap items-center gap-4">
+        <a
+          href="#contact"
+          class="inline-flex items-center gap-2 rounded-[var(--radius)] bg-brand-accent px-6 py-3 text-base font-semibold text-brand-primary shadow-md hover:bg-brand-accent-hover transition-colors"
+          style="transition-duration: var(--duration-fast);"
+        >
+          Start a conversation
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+          </svg>
+        </a>
+        <a
+          href="#services"
+          class="inline-flex items-center gap-2 text-base font-medium text-white/70 hover:text-white transition-colors"
+          style="transition-duration: var(--duration-fast);"
+        >
+          See our services
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m6 9 6 6 6-6"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-30" aria-hidden="true">
+      <span class="text-xs text-white tracking-widest uppercase">Scroll</span>
+      <svg width="16" height="24" viewBox="0 0 16 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round">
+        <rect x="1" y="1" width="14" height="22" rx="7"/>
+        <line x1="8" y1="5" x2="8" y2="10"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { initParallax } from '../../scripts/animations';
+  document.addEventListener('astro:page-load', () => {
+    initParallax('.parallax-bg', 0.2);
+  });
+</script>

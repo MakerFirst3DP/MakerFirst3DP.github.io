@@ -1,0 +1,71 @@
+<!--
+  MakerFirst Service Icon: Launch Hardware
+  Dimensions: 48x48px viewBox
+  Stroke: 2px, round line caps/joins
+  Colors: Navy #0f172a (structure), Amber #f59e0b (accents)
+  Scalable: 24px–96px
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none">
+
+  <!-- Circuit board traces (launchpad / PCB aesthetic) -->
+  <!-- Horizontal base trace -->
+  <line x1="8" y1="40" x2="40" y2="40"
+        stroke="#0f172a" stroke-width="2" stroke-linecap="round"/>
+  <!-- Vertical trace stubs from base -->
+  <line x1="12" y1="40" x2="12" y2="36"
+        stroke="#0f172a" stroke-width="2" stroke-linecap="round"/>
+  <line x1="20" y1="40" x2="20" y2="34"
+        stroke="#0f172a" stroke-width="2" stroke-linecap="round"/>
+  <line x1="28" y1="40" x2="28" y2="34"
+        stroke="#0f172a" stroke-width="2" stroke-linecap="round"/>
+  <line x1="36" y1="40" x2="36" y2="36"
+        stroke="#0f172a" stroke-width="2" stroke-linecap="round"/>
+  <!-- Horizontal cross-trace -->
+  <line x1="12" y1="36" x2="20" y2="36"
+        stroke="#0f172a" stroke-width="2" stroke-linecap="round"/>
+  <line x1="28" y1="36" x2="36" y2="36"
+        stroke="#0f172a" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Circuit pads (amber accent dots) -->
+  <circle cx="12" cy="36" r="1.5" fill="#f59e0b"/>
+  <circle cx="20" cy="34" r="1.5" fill="#f59e0b"/>
+  <circle cx="28" cy="34" r="1.5" fill="#f59e0b"/>
+  <circle cx="36" cy="36" r="1.5" fill="#f59e0b"/>
+
+  <!-- Rocket body -->
+  <path d="M24 6 C24 6, 19 14, 19 24 L29 24 C29 14, 24 6, 24 6Z"
+        stroke="#0f172a" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"
+        fill="none"/>
+
+  <!-- Rocket nose cone fill (amber accent) -->
+  <path d="M24 6 C24 6, 21.5 11, 21 14 L27 14 C26.5 11, 24 6, 24 6Z"
+        fill="#f59e0b" opacity="0.85"/>
+
+  <!-- Rocket window -->
+  <circle cx="24" cy="18" r="2"
+          stroke="#0f172a" stroke-width="1.5" fill="#f59e0b" opacity="0.6"/>
+
+  <!-- Left fin -->
+  <path d="M19 22 L14 30 L19 28Z"
+        stroke="#0f172a" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"
+        fill="none"/>
+
+  <!-- Right fin -->
+  <path d="M29 22 L34 30 L29 28Z"
+        stroke="#0f172a" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"
+        fill="none"/>
+
+  <!-- Rocket exhaust nozzle -->
+  <path d="M21 24 L20 28 L28 28 L27 24"
+        stroke="#0f172a" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"
+        fill="none"/>
+
+  <!-- Exhaust flames (amber) -->
+  <path d="M22 28 L24 33 L26 28"
+        stroke="#f59e0b" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"
+        fill="#f59e0b" opacity="0.7"/>
+  <path d="M23 28 L24 31 L25 28"
+        stroke="#f59e0b" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"
+        fill="#f59e0b" opacity="0.9"/>
+
+</svg>

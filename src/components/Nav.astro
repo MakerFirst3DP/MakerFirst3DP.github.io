@@ -1,0 +1,52 @@
+---
+const navLinks = [
+  { href: '#services', label: 'Services' },
+  { href: '#process', label: 'Process' },
+  { href: '#about', label: 'About' },
+];
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-brand-primary/95 backdrop-blur-sm border-b border-white/[0.06]">
+  <nav
+    class="mx-auto max-w-6xl px-6 h-16 flex items-center justify-between"
+    aria-label="Main navigation"
+  >
+    <!-- Logomark -->
+    <a
+      href="#"
+      class="flex items-center gap-2 font-bold text-white text-lg tracking-tight hover:text-brand-accent transition-colors"
+      style="transition-duration: var(--duration-fast);"
+      aria-label="MakerFirst — home"
+    >
+      <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <rect width="32" height="32" rx="6" fill="#f59e0b"/>
+        <text x="16" y="22" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="14" fill="#0f172a">MF</text>
+      </svg>
+      MakerFirst
+    </a>
+
+    <!-- Desktop nav links -->
+    <ul class="hidden md:flex items-center gap-8 list-none m-0 p-0">
+      {navLinks.map(({ href, label }) => (
+        <li>
+          <a
+            href={href}
+            class="text-sm font-medium text-white/70 hover:text-white transition-colors"
+            style="transition-duration: var(--duration-fast);"
+          >
+            {label}
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <!-- CTA -->
+    <a
+      href="#contact"
+      class="inline-flex items-center rounded-[var(--radius)] bg-brand-accent px-4 py-2 text-sm font-semibold text-brand-primary hover:bg-brand-accent-hover transition-colors"
+      style="transition-duration: var(--duration-fast);"
+    >
+      Work with us
+    </a>
+  </nav>
+</header>

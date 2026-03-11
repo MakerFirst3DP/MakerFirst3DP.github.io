@@ -1,0 +1,87 @@
+---
+const services = [
+  {
+    icon: '/svg/services/launch-hardware.svg',
+    name: 'Launch Hardware',
+    tagline: 'From prototype to production-ready.',
+    description:
+      'We design and engineer physical products end-to-end — schematic capture, PCB layout, enclosure design, BOM management, and factory bring-up. We stay on until it ships.',
+    details: ['PCB design & review', 'Enclosure & DFM', 'Supplier qualification', 'Production bring-up'],
+  },
+  {
+    icon: '/svg/services/ai-agents.svg',
+    name: 'AI Agents',
+    tagline: 'Autonomous systems that actually work.',
+    description:
+      'We build production-grade AI agents: tool-calling pipelines, retrieval-augmented systems, multi-agent orchestration, and the evals to know they\'re working.',
+    details: ['LLM integration & fine-tuning', 'Agentic workflow design', 'RAG pipelines', 'Eval frameworks'],
+  },
+  {
+    icon: '/svg/services/firmware-dev.svg',
+    name: 'Firmware Dev',
+    tagline: 'Embedded software that runs in the real world.',
+    description:
+      'Bare-metal and RTOS firmware for the full lifecycle — from HAL drivers and bootloaders to OTA update infrastructure and field-deployed debug tooling.',
+    details: ['Bare-metal & RTOS', 'Device drivers & HALs', 'Bootloaders & OTA', 'Debug & test harnesses'],
+  },
+];
+---
+
+<section id="services" class="py-24 bg-white md:py-32">
+  <div class="mx-auto max-w-6xl px-6">
+
+    <!-- Header -->
+    <div class="max-w-2xl">
+      <p class="mb-3 text-xs font-semibold tracking-[0.15em] uppercase text-brand-accent">
+        Services
+      </p>
+      <h2 class="text-3xl font-bold tracking-tight text-brand-primary md:text-4xl">
+        Three disciplines.<br />One team.
+      </h2>
+      <p class="mt-4 text-lg text-neutral-600">
+        We operate at the intersection of hardware, intelligence, and firmware —
+        the engineering stack that modern connected products demand.
+      </p>
+    </div>
+
+    <!-- Service cards -->
+    <div class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
+      {services.map((service) => (
+        <div class="services-card group flex flex-col rounded-[var(--radius-lg)] border border-neutral-200 bg-neutral-50 p-8 transition-shadow hover:shadow-lg"
+             style="transition-duration: var(--duration-normal);">
+
+          <!-- Icon -->
+          <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-[var(--radius)] bg-white shadow-sm border border-neutral-200">
+            <img src={service.icon} alt="" width="28" height="28" aria-hidden="true" />
+          </div>
+
+          <!-- Content -->
+          <p class="mb-1 text-xs font-semibold tracking-[0.1em] uppercase text-brand-accent">
+            {service.tagline}
+          </p>
+          <h3 class="mb-3 text-xl font-bold text-brand-primary">{service.name}</h3>
+          <p class="text-base text-neutral-600 leading-relaxed flex-1">{service.description}</p>
+
+          <!-- Detail list -->
+          <ul class="mt-6 space-y-2" role="list">
+            {service.details.map((detail) => (
+              <li class="flex items-center gap-2 text-sm text-brand-secondary">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-brand-accent shrink-0" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                {detail}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  import { initStaggerReveal } from '../../scripts/animations';
+  document.addEventListener('astro:page-load', () => {
+    initStaggerReveal('#services', '.services-card', { stagger: 0.12 });
+  });
+</script>
