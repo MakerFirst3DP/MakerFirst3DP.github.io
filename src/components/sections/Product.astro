@@ -21,29 +21,41 @@ const specs = [
   <div class="max-w-7xl mx-auto px-4">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
 
-      <!-- Product Schematic View -->
-      <div class="relative bg-surface-dim border border-outline p-8 group rounded-[var(--radius)]">
-        <div class="absolute top-0 right-0 p-4 border-l border-b border-outline font-display text-[10px] text-on-surface-variant uppercase tracking-widest">
-          AIR-PUCK / REV C
-        </div>
-        <div class="w-full aspect-square flex items-center justify-center opacity-20">
+      <!-- Product Images: CAD + Real Print -->
+      <div class="space-y-4">
+        <!-- CAD Screenshot -->
+        <div class="relative bg-surface-dim border border-outline overflow-hidden rounded-[var(--radius)]">
+          <div class="absolute top-0 right-0 p-3 border-l border-b border-outline font-display text-[10px] text-on-surface-variant uppercase tracking-widest bg-surface-dim/90 z-10">
+            AIRSHAKER / REV C
+          </div>
           <img
-            src="/svg/logo/logomark.svg"
-            alt="Air-Puck Distributor product render"
-            class="w-full h-full object-contain grayscale brightness-125 group-hover:grayscale-0 transition-all duration-500"
+            src="/images/AirShakerCad.png"
+            alt="AirShaker CAD model — Onshape design view"
+            class="w-full h-auto object-contain"
           />
+          <!-- [WIDGET] Schematic Callouts -->
+          <div class="absolute top-[20%] right-[15%] flex items-center gap-2">
+            <div class="callout-dot"></div>
+            <div class="w-12 callout-line"></div>
+            <span class="font-display text-[9px] uppercase tracking-widest text-primary bg-surface-dim/90 px-1.5 py-0.5">Vortex_Chamber</span>
+          </div>
+          <div class="absolute bottom-[25%] left-[20%] flex items-center gap-2">
+            <span class="font-display text-[9px] uppercase tracking-widest text-primary bg-surface-dim/90 px-1.5 py-0.5">Air_Diffuser</span>
+            <div class="w-12 callout-line"></div>
+            <div class="callout-dot"></div>
+          </div>
         </div>
 
-        <!-- [WIDGET] Schematic Callouts -->
-        <div class="absolute top-[25%] right-[20%] flex items-center gap-3">
-          <div class="callout-dot"></div>
-          <div class="w-16 callout-line"></div>
-          <span class="font-display text-[10px] uppercase tracking-widest text-primary bg-surface-dim px-2">Vortex_Chamber</span>
-        </div>
-        <div class="absolute bottom-[30%] left-[25%] flex items-center gap-3">
-          <span class="font-display text-[10px] uppercase tracking-widest text-primary bg-surface-dim px-2">Air_Diffuser</span>
-          <div class="w-16 callout-line"></div>
-          <div class="callout-dot"></div>
+        <!-- Real Printed Product -->
+        <div class="relative bg-surface-dim border border-outline overflow-hidden rounded-[var(--radius)]">
+          <div class="absolute top-0 left-0 p-3 border-r border-b border-outline font-display text-[10px] text-on-surface-variant uppercase tracking-widest bg-surface-dim/90 z-10">
+            0.12mm LAYER HEIGHT · PETG-CF
+          </div>
+          <img
+            src="/images/AirShaker.png"
+            alt="AirShaker — printed and assembled real product photo"
+            class="w-full h-auto object-cover"
+          />
         </div>
       </div>
 
@@ -52,7 +64,7 @@ const specs = [
           <!-- [WIDGET] Technical Label -->
           <p class="technical-label">System Identification</p>
           <h2 class="font-display text-4xl font-bold uppercase tracking-tighter text-on-surface">
-            Air-Puck<br/>Distributor MK.III
+            AirShaker<br/>Distributor MK.III
           </h2>
           <p class="text-on-surface-variant font-light leading-relaxed">
             The first product in the espresso gear line. A 3D printable tool that uses precision air channels to distribute coffee grounds evenly in the puck — replacing mechanical WDT tools entirely. Novel category. Better taste in the cup, even with a cheap grinder.
