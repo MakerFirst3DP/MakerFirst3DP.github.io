@@ -25,14 +25,14 @@ const specs = [
       <div class="space-y-4">
         <!-- CAD Screenshot -->
         <div class="relative bg-surface-dim border border-outline overflow-hidden rounded-[var(--radius)]">
-          <div class="absolute top-0 right-0 p-3 border-l border-b border-outline font-display text-[10px] text-on-surface-variant uppercase tracking-widest bg-surface-dim/90 z-10">
-            AIRSHAKER / REV C
-          </div>
           <img
             src="/images/AirShakerCad.png"
             alt="AirShaker CAD model — Onshape design view"
             class="w-full h-auto object-contain"
           />
+          <!-- Bottom labels like the original hero stamps -->
+          <div class="absolute bottom-3 left-3 font-display text-[10px] text-primary uppercase tracking-widest bg-surface-dim/90 px-2 py-1 z-10">AIRSHAKER / REV C</div>
+          <div class="absolute bottom-3 right-3 font-display text-[10px] text-on-surface-variant uppercase tracking-widest bg-surface-dim/90 px-2 py-1 z-10">ONSHAPE CAD</div>
           <!-- [WIDGET] Schematic Callouts -->
           <div class="absolute top-[28%] right-[15%] flex items-center gap-2">
             <div class="callout-dot"></div>
@@ -48,14 +48,13 @@ const specs = [
 
         <!-- Real Printed Product -->
         <div class="relative border border-outline overflow-hidden rounded-[var(--radius)]" style="background-color: #ffffff;">
-          <div class="absolute top-0 left-0 p-3 border-r border-b border-outline font-display text-[10px] text-on-surface-variant uppercase tracking-widest bg-surface-dim/90 z-10">
-            0.4mm LAYER HEIGHT · PETG-HF
-          </div>
           <img
             src="/images/AirShaker.png"
             alt="AirShaker — printed and assembled real product photo"
             class="w-full h-auto object-cover"
           />
+          <div class="absolute bottom-3 left-3 font-display text-[10px] text-primary uppercase tracking-widest bg-surface-dim/90 px-2 py-1 z-10">AIRSHAKER / REV C</div>
+          <div class="absolute bottom-3 right-3 font-display text-[10px] text-on-surface-variant uppercase tracking-widest bg-surface-dim/90 px-2 py-1 z-10">0.4mm · PETG-HF</div>
         </div>
       </div>
 
