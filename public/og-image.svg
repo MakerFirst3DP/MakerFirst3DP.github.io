@@ -1,29 +1,30 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
-  <!-- Background -->
-  <rect width="1200" height="630" fill="#0f172a"/>
+  <!-- Background — Workbench surface -->
+  <rect width="1200" height="630" fill="#0e0e0e"/>
 
-  <!-- Subtle grid pattern -->
-  <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
-    <circle cx="30" cy="30" r="1" fill="white" opacity="0.06"/>
+  <!-- Precision Grid -->
+  <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+    <line x1="32" y1="0" x2="32" y2="32" stroke="#FF6B00" stroke-width="0.3" opacity="0.08"/>
+    <line x1="0" y1="32" x2="32" y2="32" stroke="#FF6B00" stroke-width="0.3" opacity="0.08"/>
   </pattern>
   <rect width="1200" height="630" fill="url(#grid)"/>
 
-  <!-- Amber accent bar -->
-  <rect x="80" y="200" width="4" height="80" fill="#f59e0b" rx="2"/>
+  <!-- Filament Orange accent bar -->
+  <rect x="80" y="200" width="4" height="80" fill="#FF6B00" rx="2"/>
 
   <!-- Main headline -->
-  <text x="108" y="262" font-family="Inter, system-ui, -apple-system, sans-serif" font-weight="700" font-size="64" fill="white" letter-spacing="-1.5">We build the hard stuff.</text>
+  <text x="108" y="262" font-family="Space Grotesk, Inter, system-ui, sans-serif" font-weight="700" font-size="64" fill="#e2e2e5" letter-spacing="-2">One size doesn't fit all.</text>
 
   <!-- Subline -->
-  <text x="108" y="322" font-family="Inter, system-ui, -apple-system, sans-serif" font-weight="400" font-size="26" fill="white" opacity="0.55">Hardware · AI Agents · Firmware — from prototype to production.</text>
+  <text x="108" y="322" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="26" fill="#8e8e93">3D printable gadgets for Makers. Open source. Community-driven.</text>
 
-  <!-- Brand mark -->
-  <rect x="80" y="420" width="44" height="44" rx="8" fill="#f59e0b"/>
-  <text x="102" y="449" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="20" fill="#0f172a">MF</text>
+  <!-- Brand mark — simplified gear -->
+  <rect x="80" y="420" width="44" height="44" rx="4" fill="#FF6B00"/>
+  <text x="102" y="449" text-anchor="middle" font-family="Space Grotesk, Inter, sans-serif" font-weight="700" font-size="20" fill="#000000">MF</text>
 
   <!-- Brand name -->
-  <text x="138" y="450" font-family="Inter, system-ui, -apple-system, sans-serif" font-weight="700" font-size="22" fill="white">MakerFirst</text>
+  <text x="138" y="450" font-family="Space Grotesk, Inter, system-ui, sans-serif" font-weight="700" font-size="22" fill="#e2e2e5">MakerFirst</text>
 
   <!-- URL -->
-  <text x="138" y="474" font-family="Inter, system-ui, -apple-system, sans-serif" font-weight="400" font-size="16" fill="white" opacity="0.35">makerfirst.ca</text>
+  <text x="138" y="474" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="16" fill="#8e8e93" opacity="0.6">makerfirst.ca</text>
 </svg>

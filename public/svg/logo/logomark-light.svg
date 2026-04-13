@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  MakerFirst Logomark — Light / Reversed variant
-  ================================================
-  Use on: dark backgrounds (navy, neutral-950)
-  Dimensions : 64 x 64 px viewBox
-  Safe zone  : 12.5% = 8px padding on each side
-  Stroke     : 2.5px, round line-caps & joins
-  Colors     : White #ffffff (primary strokes), Amber #f59e0b (accent)
+  MakerFirst Logomark — Light variant (for dark backgrounds)
+  Uses: White strokes on dark backgrounds, Orange #FF6B00 accent
 -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
   <defs>
     <style>
       .light  { fill: none; stroke: #ffffff; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
-      .amber  { fill: none; stroke: #f59e0b; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
-      .amber-fill { fill: #f59e0b; stroke: none; }
+      .accent { fill: none; stroke: #FF6B00; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+      .accent-fill { fill: #FF6B00; stroke: none; }
     </style>
   </defs>
 
@@ -52,27 +47,27 @@
     Z
   "/>
 
-  <!-- Inner gear bore circle (white) -->
+  <!-- Inner gear bore circle -->
   <circle class="light" cx="32" cy="32" r="9"/>
 
-  <!-- Wrench silhouette (white) -->
+  <!-- Wrench -->
   <line class="light" x1="25" y1="25" x2="39" y2="39"/>
   <path class="light" d="M 22 22 L 25 19 L 28 22"/>
   <rect class="light" x="38" y="38" width="4" height="4" rx="0.5"/>
 
-  <!-- Circuit traces (amber accent) -->
-  <polyline class="amber" points="37,13.5 40,10 46,10"/>
-  <circle class="amber-fill" cx="46" cy="10" r="1.5"/>
+  <!-- Circuit traces (orange accent) -->
+  <polyline class="accent" points="37,13.5 40,10 46,10"/>
+  <circle class="accent-fill" cx="46" cy="10" r="1.5"/>
 
-  <polyline class="amber" points="27,50 24,53 18,53"/>
-  <circle class="amber-fill" cx="18" cy="53" r="1.5"/>
+  <polyline class="accent" points="27,50 24,53 18,53"/>
+  <circle class="accent-fill" cx="18" cy="53" r="1.5"/>
 
-  <polyline class="amber" points="49,29 53,29 53,25"/>
-  <circle class="amber-fill" cx="53" cy="25" r="1.5"/>
+  <polyline class="accent" points="49,29 53,29 53,25"/>
+  <circle class="accent-fill" cx="53" cy="25" r="1.5"/>
 
-  <polyline class="amber" points="15,34 11,34 11,38"/>
-  <circle class="amber-fill" cx="11" cy="38" r="1.5"/>
+  <polyline class="accent" points="15,34 11,34 11,38"/>
+  <circle class="accent-fill" cx="11" cy="38" r="1.5"/>
 
-  <!-- Central hub dot (amber) -->
-  <circle class="amber-fill" cx="32" cy="32" r="2.5"/>
+  <!-- Central hub dot -->
+  <circle class="accent-fill" cx="32" cy="32" r="2.5"/>
 </svg>
