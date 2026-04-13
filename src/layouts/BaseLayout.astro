@@ -39,8 +39,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={new URL(ogImage, Astro.site)} />
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/logo.png" />
+    <!-- Favicon — PNG with multiple sizes for broad browser support -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/logo.png" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <!-- Fonts: Space Grotesk (display) + Inter (body) -->
