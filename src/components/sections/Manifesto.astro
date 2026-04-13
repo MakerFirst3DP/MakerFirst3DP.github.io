@@ -1,0 +1,59 @@
+---
+const principles = [
+  {
+    number: '01',
+    title: 'Partners, not consumers',
+    body: "We don't ship products to customers. We release designs to partners. Every maker who prints, modifies, or improves our work is a collaborator. Your fork is as valid as our main branch.",
+  },
+  {
+    number: '02',
+    title: 'New categories, not better clones',
+    body: 'Optimization of existing ideas is not our thing. The Air-Puck Distributor didn\'t exist before we made it — a new product category born from a different way of thinking about the problem.',
+  },
+  {
+    number: '03',
+    title: 'Open by default',
+    body: 'Every design file, every iteration, every mistake — public. CERN-OHL-S license. Take it, fork it, sell it, improve it. The only requirement is you pass the same freedom forward.',
+  },
+  {
+    number: '04',
+    title: 'Built for real printers',
+    body: 'No idealized designs that only work on industrial machines. Our files are tested on Bambu, Prusa, and Voron. PETG-CF and PA12-CF protocols included. If your printer can do 0.12mm layers, you can build this.',
+  },
+];
+---
+
+<!--
+  MANIFESTO SECTION — Why MakerFirst Exists
+  Uses: [WIDGET] Workbench Floor + Precision Grid,
+        [WIDGET] Technical Label, [WIDGET] Filament Accent
+-->
+
+<section id="manifesto" class="relative py-16 precision-grid border-b border-outline" style="background-color: var(--color-surface-lowest);">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="max-w-2xl mb-12">
+      <!-- [WIDGET] Technical Label -->
+      <p class="technical-label mb-3">Why We Exist</p>
+      <h2 class="font-display text-4xl font-bold uppercase tracking-tighter text-on-surface">
+        We put something<br/>new on the table.
+      </h2>
+      <p class="mt-4 text-lg text-on-surface-variant font-light leading-relaxed border-l-2 border-outline pl-4">
+        MakerFirst exists because the best 3D printable gadgets haven't been designed yet. We don't make the thing that already exists, slightly cheaper. We invent categories that didn't exist, then open source the blueprints.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {principles.map((p) => (
+        <div class="bg-surface border border-outline p-8 rounded-[var(--radius)] group hover:border-primary/30 transition-colors" style="transition-duration: var(--duration-fast);">
+          <div class="flex items-center gap-3 mb-4">
+            <!-- [WIDGET] Filament Accent as number indicator -->
+            <span class="font-display text-xl font-bold text-primary">{p.number}</span>
+            <div class="flex-1 h-px bg-outline"></div>
+          </div>
+          <h3 class="font-display text-lg font-bold uppercase tracking-wider text-on-surface mb-3">{p.title}</h3>
+          <p class="text-sm text-on-surface-variant leading-relaxed">{p.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,85 +1,76 @@
 ---
 ---
 
+<!--
+  HERO SECTION — "The Laboratory"
+  Uses: [WIDGET] Precision Grid, [WIDGET] Version Badge, [WIDGET] Technical Label
+  The hero is product-focused: slogan, tagline, product visual with spec data.
+-->
+
 <section
-  class="relative min-h-screen flex flex-col justify-center overflow-hidden bg-brand-primary pt-16"
+  class="relative min-h-[80vh] flex flex-col justify-center precision-grid overflow-hidden px-4 border-b border-outline"
   aria-label="Hero"
+  style="background-color: var(--color-surface-lowest);"
 >
-  <!-- Parallax background -->
-  <div
-    class="parallax-bg absolute inset-0 text-white pointer-events-none select-none"
-    aria-hidden="true"
-  >
-    <img
-      src="/svg/decorative/hero-parallax.svg"
-      class="w-full h-full object-cover opacity-[0.06]"
-      alt=""
-      fetchpriority="low"
-      loading="eager"
-    />
-  </div>
+  <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+    <div class="lg:col-span-7 space-y-6">
+      <!-- [WIDGET] Version Badge — First product line indicator -->
+      <div class="version-badge">
+        <span class="status-dot"></span>
+        FIRST PRODUCT LINE: ESPRESSO GEAR
+      </div>
 
-  <!-- Gradient fade at bottom -->
-  <div
-    class="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
-    style="background: linear-gradient(to bottom, transparent, var(--color-brand-primary));"
-    aria-hidden="true"
-  ></div>
-
-  <div class="relative mx-auto max-w-6xl px-6 py-24 md:py-32">
-    <div class="max-w-3xl">
-      <p class="mb-6 text-xs font-semibold tracking-[0.15em] uppercase text-brand-accent/80">
-        Engineering Consulting
-      </p>
-
-      <h1 class="text-5xl font-bold tracking-tight text-white leading-[1.1] md:text-6xl lg:text-7xl">
-        We build<br />the hard&nbsp;stuff.
+      <h1 class="font-display text-6xl md:text-8xl font-bold tracking-tighter leading-[0.9] uppercase text-on-surface">
+        One size<br/><span class="text-primary italic">doesn't</span><br/>fit all.
       </h1>
 
-      <p class="mt-6 text-lg text-white/60 leading-relaxed max-w-xl md:text-xl">
-        MakerFirst takes ideas from napkin sketch to production hardware —
-        launch devices, AI-powered systems, and embedded firmware, all
-        engineered to ship.
+      <p class="max-w-xl text-lg text-on-surface-variant font-light leading-relaxed border-l-2 border-outline pl-4">
+        We don't optimize the old. We put something new on the table. Open-source 3D printable gadgets designed with makers, for makers. Every design is a starting point — fork it, modify it, make it yours.
       </p>
 
-      <div class="mt-10 flex flex-wrap items-center gap-4">
+      <div class="flex flex-wrap gap-4 pt-2">
         <a
-          href="#contact"
-          class="inline-flex items-center gap-2 rounded-[var(--radius)] bg-brand-accent px-6 py-3 text-base font-semibold text-brand-primary shadow-md hover:bg-brand-accent-hover transition-colors"
-          style="transition-duration: var(--duration-fast);"
+          href="#product"
+          class="inline-flex items-center gap-2 px-8 py-4 bg-primary text-on-primary-container font-display font-bold uppercase tracking-widest text-sm hover:brightness-110 transition-all rounded-[var(--radius)]"
+          style="background-color: var(--color-primary); color: #000;"
         >
-          Start a conversation
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
-          </svg>
+          Download STL
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
         </a>
         <a
-          href="#services"
-          class="inline-flex items-center gap-2 text-base font-medium text-white/70 hover:text-white transition-colors"
-          style="transition-duration: var(--duration-fast);"
+          href="#community"
+          class="inline-flex items-center gap-2 px-8 py-4 bg-surface border border-outline text-on-surface font-display font-bold uppercase tracking-widest text-sm hover:bg-surface-high transition-all rounded-[var(--radius)]"
         >
-          See our services
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="m6 9 6 6 6-6"/>
-          </svg>
+          View Source
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
         </a>
       </div>
     </div>
 
-    <!-- Scroll indicator -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-30" aria-hidden="true">
-      <span class="text-xs text-white tracking-widest uppercase">Scroll</span>
-      <svg width="16" height="24" viewBox="0 0 16 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round">
-        <rect x="1" y="1" width="14" height="22" rx="7"/>
-        <line x1="8" y1="5" x2="8" y2="10"/>
-      </svg>
+    <div class="lg:col-span-5 relative hidden lg:block">
+      <!-- Product Visual Schematic -->
+      <div class="aspect-square bg-surface border border-outline relative p-4 rounded-[var(--radius)]">
+        <div class="absolute inset-0 precision-grid opacity-20 rounded-[var(--radius)]"></div>
+        <div class="relative w-full h-full flex items-center justify-center">
+          <img
+            src="/svg/logo/logomark.svg"
+            alt="Air-Puck Distributor schematic"
+            class="w-48 h-48 opacity-30"
+            aria-hidden="true"
+          />
+        </div>
+        <div class="absolute top-4 left-4 font-display text-[10px] text-primary uppercase tracking-widest">AXIS_X: 420.00mm</div>
+        <div class="absolute bottom-4 right-4 font-display text-[10px] text-primary uppercase tracking-widest">TOLERANCE: +/-0.05</div>
+      </div>
     </div>
   </div>
-</section>
 
-<script>
-  import { initParallax } from '../../scripts/animations';
-  document.addEventListener('astro:page-load', () => {
-    initParallax('.parallax-bg', 0.2);
-  });
-</script>
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-30" aria-hidden="true">
+    <span class="font-display text-[10px] text-on-surface-variant uppercase tracking-widest">Scroll</span>
+    <svg width="12" height="20" viewBox="0 0 12 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+      <rect x="1" y="1" width="10" height="18" rx="5" stroke="currentColor"/>
+      <line x1="6" y1="4" x2="6" y2="8" stroke="currentColor"/>
+    </svg>
+  </div>
+</section>

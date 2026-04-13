@@ -1,0 +1,58 @@
+---
+const steps = [
+  {
+    number: '01',
+    title: 'Slicing Protocol',
+    description:
+      'Use high-temperature PETG-CF. 3 wall loops minimum for structural integrity. Infill: 25% Gyroid. No support required for internal air channels. Slice at 0.16mm for the best balance of speed and surface quality.',
+  },
+  {
+    number: '02',
+    title: 'Print & Post-Process',
+    description:
+      'Heat-treat parts at 65\u00b0C for 2 hours to relieve internal printing stresses. Surface finish should be matte to reduce static cling. Remove any stringing from air channel openings with a fine needle.',
+  },
+  {
+    number: '03',
+    title: 'Final Assembly',
+    description:
+      'Press-fit the bearing into the upper housing. Secure with M3x12 socket head screws. Torque to exactly 1.2Nm. The Air-Puck snaps together — no glue needed, no permanent commitment.',
+  },
+];
+---
+
+<!--
+  BUILD PROTOCOL SECTION — How to Print & Assemble
+  Uses: [WIDGET] Technical Label, [WIDGET] Filament Accent,
+        [WIDGET] Workbench Floor (surface-high bg)
+-->
+
+<section id="build" class="py-16 border-b border-outline" style="background-color: var(--color-surface-high);">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="max-w-2xl mb-12">
+      <!-- [WIDGET] Technical Label -->
+      <p class="technical-label mb-3">Assembly Instructions</p>
+      <h2 class="font-display text-3xl font-bold uppercase tracking-tighter text-on-surface">
+        Build It Yourself.
+      </h2>
+      <p class="mt-4 text-lg text-on-surface-variant font-light leading-relaxed">
+        Every design comes with complete slicing profiles, material specs, and assembly notes.
+        Print it today. Use it tomorrow.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {steps.map((step) => (
+        <div class="bg-surface-dim border border-outline p-8 rounded-[var(--radius)] group hover:border-primary/30 transition-colors" style="transition-duration: var(--duration-fast);">
+          <div class="flex items-center gap-3 mb-4">
+            {/* [WIDGET] Filament Accent as number */}
+            <span class="font-display text-xl font-bold text-primary">{step.number}</span>
+            <div class="flex-1 h-px bg-outline"></div>
+          </div>
+          <h4 class="font-display text-sm font-bold uppercase tracking-widest text-on-surface mb-3">{step.title}</h4>
+          <p class="text-[12px] text-on-surface-variant leading-relaxed">{step.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

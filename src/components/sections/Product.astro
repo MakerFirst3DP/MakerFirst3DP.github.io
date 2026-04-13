@@ -1,0 +1,103 @@
+---
+const specs = [
+  { label: 'DISTRIBUTION METHOD', value: 'Precision Air (Vortex)' },
+  { label: 'REPLACES', value: 'WDT + Manual Distribution' },
+  { label: 'MATERIAL PROTOCOL', value: 'PETG-CF / PA12-CF' },
+  { label: 'PRECISION TOLERANCE', value: '+/- 0.05 mm' },
+  { label: 'LAYER HEIGHT OPT', value: '0.12 mm - 0.20 mm' },
+  { label: 'ESTIMATED PRINT', value: '2h 14m @ 250mm/s' },
+  { label: 'PRODUCT CATEGORY', value: 'New Category (Novel)' },
+  { label: 'LICENSE', value: 'CERN-OHL-S (Open Source)' },
+];
+---
+
+<!--
+  PRODUCT SECTION — Deep-Dive Tech Specs
+  Uses: [WIDGET] Schematic Callout, [WIDGET] Spec Sheet,
+        [WIDGET] Technical Label, [WIDGET] Ghost Border
+-->
+
+<section id="product" class="py-16 bg-surface-low border-b border-outline">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+
+      <!-- Product Schematic View -->
+      <div class="relative bg-surface-dim border border-outline p-8 group rounded-[var(--radius)]">
+        <div class="absolute top-0 right-0 p-4 border-l border-b border-outline font-display text-[10px] text-on-surface-variant uppercase tracking-widest">
+          AIR-PUCK / REV C
+        </div>
+        <div class="w-full aspect-square flex items-center justify-center opacity-20">
+          <img
+            src="/svg/logo/logomark.svg"
+            alt="Air-Puck Distributor product render"
+            class="w-full h-full object-contain grayscale brightness-125 group-hover:grayscale-0 transition-all duration-500"
+          />
+        </div>
+
+        <!-- [WIDGET] Schematic Callouts -->
+        <div class="absolute top-[25%] right-[20%] flex items-center gap-3">
+          <div class="callout-dot"></div>
+          <div class="w-16 callout-line"></div>
+          <span class="font-display text-[10px] uppercase tracking-widest text-primary bg-surface-dim px-2">Vortex_Chamber</span>
+        </div>
+        <div class="absolute bottom-[30%] left-[25%] flex items-center gap-3">
+          <span class="font-display text-[10px] uppercase tracking-widest text-primary bg-surface-dim px-2">Air_Diffuser</span>
+          <div class="w-16 callout-line"></div>
+          <div class="callout-dot"></div>
+        </div>
+      </div>
+
+      <div class="space-y-8">
+        <header class="space-y-2">
+          <!-- [WIDGET] Technical Label -->
+          <p class="technical-label">System Identification</p>
+          <h2 class="font-display text-4xl font-bold uppercase tracking-tighter text-on-surface">
+            Air-Puck<br/>Distributor MK.III
+          </h2>
+          <p class="text-on-surface-variant font-light leading-relaxed">
+            The first product in the espresso gear line. A 3D printable tool that uses precision air channels to distribute coffee grounds evenly in the puck — replacing mechanical WDT tools entirely. Novel category. Better taste in the cup, even with a cheap grinder.
+          </p>
+        </header>
+
+        <!-- [WIDGET] Spec Sheet (Technical Data Table) -->
+        <div class="bg-surface-dim border border-outline overflow-hidden rounded-[var(--radius)]">
+          <div class="px-4 py-2 border-b border-outline bg-surface-high font-display text-[10px] uppercase tracking-widest text-on-surface-variant">
+            Physical Parameters
+          </div>
+          <table class="w-full text-left font-display text-xs">
+            <tbody>
+              {specs.map((spec, i) => (
+                <tr class={i % 2 === 0 ? 'bg-surface-dim' : 'bg-surface-low'}>
+                  <th class="px-4 py-3 font-medium text-on-surface-variant uppercase tracking-wider text-[10px]">{spec.label}</th>
+                  <td class="px-4 py-3 text-on-surface text-right">{spec.value}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <a
+            href="https://github.com/MakerFirst3DP"
+            class="flex items-center justify-center gap-3 px-6 py-4 bg-primary text-black font-display font-bold uppercase tracking-widest text-xs hover:brightness-110 transition-all rounded-[var(--radius)]"
+            style="background-color: var(--color-primary);"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+            Download STL
+          </a>
+          <a
+            href="https://github.com/MakerFirst3DP"
+            class="flex items-center justify-center gap-3 px-6 py-4 bg-surface border border-outline text-on-surface font-display font-bold uppercase tracking-widest text-xs hover:bg-surface-high transition-all rounded-[var(--radius)]"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            Source Files
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

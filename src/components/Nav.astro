@@ -1,34 +1,33 @@
 ---
 const navLinks = [
-  { href: '#services', label: 'Services' },
-  { href: '#process', label: 'Process' },
-  { href: '#about', label: 'About' },
+  { href: '#product', label: 'Product' },
+  { href: '#manifesto', label: 'Manifesto' },
+  { href: '#community', label: 'Community' },
 ];
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-brand-primary/95 backdrop-blur-sm border-b border-white/[0.06]">
+<header class="fixed top-0 w-full z-50 bg-surface-dim/95 backdrop-blur-sm border-b border-outline">
+  <!-- [WIDGET] Technical Label used in nav metadata -->
   <nav
-    class="mx-auto max-w-6xl px-6 h-16 flex items-center justify-between"
+    class="flex justify-between items-center px-4 h-16 max-w-[1440px] mx-auto"
     aria-label="Main navigation"
   >
-    <!-- Logomark -->
     <a
       href="#"
-      class="flex items-center gap-2 font-bold text-white text-lg tracking-tight hover:text-brand-accent transition-colors"
+      class="flex items-center gap-3 font-display font-bold text-lg tracking-tighter uppercase text-on-surface hover:text-primary transition-colors"
       style="transition-duration: var(--duration-fast);"
       aria-label="MakerFirst — home"
     >
-      <img src="/svg/logo/logomark-light.svg" width="32" height="32" alt="" aria-hidden="true" />
+      <img src="/svg/logo/logomark.svg" width="32" height="32" alt="" aria-hidden="true" />
       MakerFirst
     </a>
 
-    <!-- Desktop nav links -->
-    <ul class="hidden md:flex items-center gap-8 list-none m-0 p-0">
+    <ul class="hidden md:flex items-center gap-8 list-none m-0 p-0 font-display uppercase tracking-widest text-[11px]">
       {navLinks.map(({ href, label }) => (
         <li>
           <a
             href={href}
-            class="text-sm font-medium text-white/70 hover:text-white transition-colors"
+            class="text-on-surface-variant hover:text-primary transition-colors"
             style="transition-duration: var(--duration-fast);"
           >
             {label}
@@ -37,13 +36,19 @@ const navLinks = [
       ))}
     </ul>
 
-    <!-- CTA -->
-    <a
-      href="#contact"
-      class="inline-flex items-center rounded-[var(--radius)] bg-brand-accent px-4 py-2 text-sm font-semibold text-brand-primary hover:bg-brand-accent-hover transition-colors"
-      style="transition-duration: var(--duration-fast);"
-    >
-      Work with us
-    </a>
+    <div class="flex items-center gap-4">
+      <!-- [WIDGET] Version Badge -->
+      <div class="hidden sm:flex items-center gap-2 px-2 py-1 bg-surface border border-outline rounded-[var(--radius)] font-display text-[10px] tracking-tighter text-on-surface-variant uppercase">
+        <span class="status-dot"></span>
+        OPEN SOURCE
+      </div>
+      <a
+        href="#product"
+        class="font-display uppercase tracking-widest text-[11px] text-primary hover:bg-primary/10 px-4 py-2 border border-primary/20 rounded-[var(--radius)] transition-colors"
+        style="transition-duration: var(--duration-fast);"
+      >
+        Get Files
+      </a>
+    </div>
   </nav>
 </header>

@@ -1,0 +1,117 @@
+---
+const branches = [
+  {
+    name: 'stealth-carbon-v2.4',
+    status: '74 stars',
+    description: 'Optimized for carbon fiber PETG. Reinforced internal air channels for high-temp printing.',
+    author: '@CarbonKev',
+    lines: '+24 / -8',
+  },
+  {
+    name: 'wide-base-v1.2',
+    status: '38 stars',
+    description: 'Wide-base variant for 58.5mm baskets. Industrial espresso machine fit.',
+    author: '@BaristaEng',
+    lines: '+112 / -24',
+  },
+  {
+    name: 'zero-static-mod',
+    status: '19 stars',
+    description: 'Conductive filament integration. Eliminates static cling in dry environments.',
+    author: '@StaticDiss',
+    lines: '+45 / -12',
+  },
+  {
+    name: 'dnse-diffuser-alpha',
+    status: '6 stars',
+    description: 'Dense diffuser pattern test. Experimental — needs more data on extraction uniformity.',
+    author: '@DensePack',
+    lines: '+8 / -0',
+  },
+];
+---
+
+<!--
+  COMMUNITY SECTION — The Fork Stream
+  Uses: [WIDGET] Terminal Card, [WIDGET] Precision Grid,
+        [WIDGET] Technical Label, [WIDGET] Version Badge
+-->
+
+<section id="community" class="py-16 bg-surface-dim precision-grid border-b border-outline">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex flex-col md:flex-row justify-between items-baseline gap-4 mb-8">
+      <div>
+        <!-- [WIDGET] Technical Label -->
+        <p class="technical-label mb-2">Commit History</p>
+        <h2 class="font-display text-3xl font-bold uppercase tracking-tighter text-on-surface">
+          Active Branches
+        </h2>
+      </div>
+      <div class="version-badge">
+        <span class="status-dot"></span>
+        {branches.length} ACTIVE FORKS
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <!-- [WIDGET] Terminal Card — Full terminal with commit history -->
+      <div class="md:col-span-2 terminal-card h-64 rounded-[var(--radius)]">
+        <div class="terminal-header">
+          <div class="flex gap-1.5">
+            <div class="terminal-dot bg-red-500/30"></div>
+            <div class="terminal-dot bg-yellow-500/30"></div>
+            <div class="terminal-dot bg-green-500/30"></div>
+          </div>
+          <span class="font-display text-[9px] uppercase tracking-widest text-on-surface-variant">
+            branch: {branches[0].name}
+          </span>
+        </div>
+        <div class="terminal-body terminal-scroll">
+          <div class="text-primary font-mono">$ git log --oneline -4</div>
+          <div class="text-on-surface-variant">a3f2e1c feat: reinforced air channel geometry</div>
+          <div class="text-on-surface-variant">7b9d4f2 fix: wall thickness +0.4mm for strength</div>
+          <div class="text-on-surface-variant">c1e8a3d chore: updated print profiles for PA12-CF</div>
+          <div class="text-green-500/80">+ Added reinforced desk clamp geometry</div>
+          <div class="text-green-500/80">+ Increased wall thickness by 0.4mm</div>
+          <div class="mt-3 text-on-surface">{branches[0].author}: Optimizing for carbon fiber PETG.</div>
+        </div>
+        <div class="p-3 border-t border-outline flex justify-between items-center bg-surface-low">
+          <span class="font-display text-[10px] text-on-surface-variant uppercase">Updated 2h ago</span>
+          <a href="https://github.com/MakerFirst3DP" class="text-primary font-display text-[10px] uppercase font-bold hover:underline" target="_blank" rel="noopener noreferrer">View Fork</a>
+        </div>
+      </div>
+
+      <!-- Compact branch cards -->
+      {branches.slice(1).map((branch) => (
+        <div class="bg-surface border border-outline p-4 flex flex-col justify-between group hover:border-primary/30 transition-colors rounded-[var(--radius)] cursor-pointer" style="transition-duration: var(--duration-fast);">
+          <div class="space-y-3">
+            <div class="w-8 h-8 flex items-center justify-center bg-surface-dim border border-outline group-hover:bg-primary/10 transition-colors rounded-[var(--radius)]">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary" aria-hidden="true">
+                <path d="M6 3v12"/><path d="M18 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/><path d="M6 21a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/><path d="M15 6a6 6 0 0 1-9 9"/>
+              </svg>
+            </div>
+            <h4 class="font-display text-sm font-bold uppercase tracking-wider text-on-surface">{branch.name}</h4>
+            <p class="text-[11px] text-on-surface-variant leading-normal">{branch.description}</p>
+          </div>
+          <div class="pt-4 border-t border-outline/50 flex justify-between items-center">
+            <span class="font-display text-[9px] text-on-surface-variant uppercase">{branch.status}</span>
+            <span class="font-display text-[9px] text-on-surface-variant">{branch.lines}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-8 text-center">
+      <a
+        href="https://github.com/MakerFirst3DP"
+        class="inline-flex items-center gap-2 font-display text-sm font-bold uppercase tracking-widest text-primary hover:text-primary-tint transition-colors"
+        style="transition-duration: var(--duration-fast);"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        View All Forks on GitHub
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+      </a>
+    </div>
+  </div>
+</section>

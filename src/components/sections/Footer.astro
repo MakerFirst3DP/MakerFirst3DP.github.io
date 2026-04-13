@@ -1,93 +1,99 @@
 ---
-import linkedinSvg from '/public/svg/social/linkedin.svg?raw';
 import githubSvg from '/public/svg/social/github.svg?raw';
 
 const currentYear = new Date().getFullYear();
 
 const links = [
-  { href: '#services', label: 'Services' },
-  { href: '#process', label: 'Process' },
-  { href: '#about', label: 'About' },
-  { href: 'mailto:hello@makerfirst.ca', label: 'Contact' },
+  { href: '#product', label: 'Product' },
+  { href: '#manifesto', label: 'Manifesto' },
+  { href: '#community', label: 'Community' },
+  { href: '#build', label: 'Build' },
 ];
 
-const socials = [
-  { href: 'https://linkedin.com/company/makerfirst', label: 'LinkedIn', svg: linkedinSvg },
-  { href: 'https://github.com/MakerFirst3DP', label: 'GitHub', svg: githubSvg },
+const resourceLinks = [
+  { href: 'https://github.com/MakerFirst3DP', label: 'GitHub Repository' },
+  { href: 'https://github.com/MakerFirst3DP', label: 'STL Downloads' },
+  { href: 'https://github.com/MakerFirst3DP', label: 'Print Profiles' },
 ];
 ---
 
-<footer class="bg-neutral-950 border-t border-white/[0.06]">
-  <div class="mx-auto max-w-6xl px-6 py-16">
+<!--
+  FOOTER — Technical, precise, no filler.
+  Uses: [WIDGET] Technical Label, [WIDGET] Ghost Border
+-->
 
-    <div class="grid grid-cols-1 gap-12 md:grid-cols-3">
+<footer class="border-t border-outline" style="background-color: var(--color-surface-dim);">
+  <div class="max-w-[1440px] mx-auto py-10 px-4">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
 
       <!-- Brand -->
-      <div>
-        <a href="#" class="inline-flex items-center gap-2 font-bold text-white text-lg tracking-tight mb-4" aria-label="MakerFirst home">
-          <img src="/svg/logo/logomark-light.svg" width="32" height="32" alt="" aria-hidden="true" />
-          MakerFirst
+      <div class="md:col-span-5 space-y-4">
+        <a href="#" class="inline-flex items-center gap-3" aria-label="MakerFirst home">
+          <img src="/svg/logo/logomark.svg" width="28" height="28" alt="" aria-hidden="true" />
+          <span class="font-display font-bold text-base tracking-tighter uppercase text-on-surface">MakerFirst</span>
         </a>
-        <p class="text-sm text-white/40 leading-relaxed max-w-xs">
-          Engineering consulting for Launch Hardware, AI Agents, and Firmware Development.
+        <p class="text-[11px] text-on-surface-variant max-w-xs leading-relaxed uppercase tracking-wider">
+          3D printable gadgets for makers. Open source hardware. Every design starts a conversation.
         </p>
       </div>
 
       <!-- Links -->
-      <div>
-        <h3 class="text-xs font-semibold tracking-[0.12em] uppercase text-white/30 mb-4">Navigation</h3>
-        <ul class="flex flex-col gap-3 list-none m-0 p-0" role="list">
-          {links.map(({ href, label }) => (
-            <li>
-              <a
-                href={href}
-                class="text-sm text-white/50 hover:text-white transition-colors"
-                style="transition-duration: var(--duration-fast);"
-              >
-                {label}
-              </a>
-            </li>
-          ))}
-        </ul>
+      <div class="md:col-span-3 flex flex-col gap-2">
+        <span class="technical-label block mb-1">Navigation</span>
+        {links.map(({ href, label }) => (
+          <a
+            href={href}
+            class="text-[11px] text-on-surface-variant hover:text-on-surface uppercase tracking-wider transition-colors"
+            style="transition-duration: var(--duration-fast);"
+          >
+            {label}
+          </a>
+        ))}
       </div>
 
-      <!-- Contact + Socials -->
-      <div>
-        <h3 class="text-xs font-semibold tracking-[0.12em] uppercase text-white/30 mb-4">Contact</h3>
+      <!-- Resources -->
+      <div class="md:col-span-2 flex flex-col gap-2">
+        <span class="technical-label block mb-1">Resources</span>
+        {resourceLinks.map(({ href, label }) => (
+          <a
+            href={href}
+            class="text-[11px] text-on-surface-variant hover:text-on-surface uppercase tracking-wider transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="transition-duration: var(--duration-fast);"
+          >
+            {label}
+          </a>
+        ))}
+      </div>
+
+      <!-- Social + Contact -->
+      <div class="md:col-span-2 flex flex-col gap-2">
+        <span class="technical-label block mb-1">Connect</span>
+        <a
+          href="https://github.com/MakerFirst3DP"
+          class="w-5 h-5 block text-on-surface-variant hover:text-on-surface transition-colors"
+          style="transition-duration: var(--duration-fast);"
+          aria-label="GitHub"
+          target="_blank"
+          rel="noopener noreferrer"
+          set:html={githubSvg}
+        />
         <a
           href="mailto:hello@makerfirst.ca"
-          class="text-sm text-white/50 hover:text-white transition-colors block mb-6"
+          class="text-[11px] text-on-surface-variant hover:text-on-surface uppercase tracking-wider transition-colors"
           style="transition-duration: var(--duration-fast);"
         >
           hello@makerfirst.ca
         </a>
-
-        <div class="flex items-center gap-4">
-          {socials.map(({ href, label, svg }) => (
-            <a
-              href={href}
-              class="w-5 h-5 block text-white/30 hover:text-white/70 transition-colors"
-              style="transition-duration: var(--duration-fast);"
-              aria-label={label}
-              rel="noopener noreferrer"
-              target="_blank"
-              set:html={svg}
-            />
-          ))}
-        </div>
       </div>
 
     </div>
 
     <!-- Bottom bar -->
-    <div class="mt-12 pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p class="text-xs text-white/25">
-        &copy; {currentYear} MakerFirst. All rights reserved.
-      </p>
-      <p class="text-xs text-white/25">
-        makerfirst.ca
-      </p>
+    <div class="mt-10 pt-6 border-t border-outline flex flex-col md:flex-row justify-between items-center gap-4 text-[9px] font-display text-on-surface-variant uppercase tracking-[0.2em]">
+      <span>&copy; {currentYear} MakerFirst. All designs released under CERN-OHL-S.</span>
+      <span>makerfirst.ca</span>
     </div>
-
   </div>
 </footer>
