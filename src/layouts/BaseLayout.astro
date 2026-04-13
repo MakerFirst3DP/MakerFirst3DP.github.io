@@ -10,7 +10,7 @@ interface Props {
 
 const {
   title,
-  description = 'MakerFirst — Consulting for Launch Hardware, AI Agents, and Firmware Development.',
+  description = 'MakerFirst — 3D printable everyday gadgets for Makers. Open source, community-driven, built to put something new on the table.',
   ogImage = '/og-image.svg',
 } = Astro.props;
 
@@ -21,7 +21,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
@@ -42,17 +42,17 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-    <!-- Inter font -->
+    <!-- Fonts: Space Grotesk (display) + Inter (body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
     <ClientRouter />
   </head>
-  <body>
+  <body class="bg-surface-dim text-on-surface font-body antialiased">
     <a href="#main" class="skip-link">Skip to content</a>
     <slot />
   </body>

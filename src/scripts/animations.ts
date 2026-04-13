@@ -7,10 +7,6 @@ function prefersReducedMotion(): boolean {
   return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 }
 
-/**
- * Parallax effect on scroll. Works with mouse scroll and touch scroll
- * via GSAP ScrollTrigger's native touch support.
- */
 export function initParallax(selector: string, speed = 0.3): void {
   if (prefersReducedMotion()) return;
 
@@ -29,16 +25,13 @@ export function initParallax(selector: string, speed = 0.3): void {
   });
 }
 
-/**
- * Fade-up reveal on scroll.
- */
 export function initScrollReveal(
   selector: string,
   options: { distance?: number; duration?: number; delay?: number } = {},
 ): void {
   if (prefersReducedMotion()) return;
 
-  const { distance = 24, duration = 0.4, delay = 0 } = options;
+  const { distance = 16, duration = 0.4, delay = 0 } = options;
 
   const elements = document.querySelectorAll<HTMLElement>(selector);
   elements.forEach((el) => {
@@ -51,16 +44,13 @@ export function initScrollReveal(
       ease: 'power2.out',
       scrollTrigger: {
         trigger: el,
-        start: 'top 85%',
+        start: 'top 88%',
         toggleActions: 'play none none none',
       },
     });
   });
 }
 
-/**
- * Staggered children reveal on scroll.
- */
 export function initStaggerReveal(
   parentSelector: string,
   childSelector: string,
@@ -68,7 +58,7 @@ export function initStaggerReveal(
 ): void {
   if (prefersReducedMotion()) return;
 
-  const { distance = 24, duration = 0.4, stagger = 0.1 } = options;
+  const { distance = 16, duration = 0.4, stagger = 0.1 } = options;
 
   const parents = document.querySelectorAll<HTMLElement>(parentSelector);
   parents.forEach((parent) => {
@@ -82,7 +72,7 @@ export function initStaggerReveal(
       ease: 'power2.out',
       scrollTrigger: {
         trigger: parent,
-        start: 'top 85%',
+        start: 'top 88%',
         toggleActions: 'play none none none',
       },
     });

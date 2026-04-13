@@ -1,21 +1,83 @@
 @import 'tailwindcss';
 
+/*
+ * MAKERFIRST DESIGN SYSTEM — "The Digital Workbench"
+ * =========================================================
+ *
+ * NAMED DESIGN WIDGETS (reusable across website, banner, biz card, mobile app):
+ *
+ * 1. [WIDGET] Precision Grid    — Background grid pattern (32px major / 8px minor)
+ * 2. [WIDGET] Schematic Callout  — Leader line annotation (dot + 1px line + label)
+ * 3. [WIDGET] Spec Sheet         — Technical data table (no dividers, tonal zebra)
+ * 4. [WIDGET] Version Badge      — Small metadata chip with status indicator
+ * 5. [WIDGET] Terminal Card        — Code/terminal preview with window controls
+ * 6. [WIDGET] Filament Accent     — Orange gradient strip/bar for CTAs
+ * 7. [WIDGET] Technical Label     — Small uppercase tracking-widest label
+ * 8. [WIDGET] Ghost Border        — Subtle outline at 15% opacity (felt not seen)
+ * 9. [WIDGET] Workbench Floor     — Deepest surface bg for "etched" sections
+ * 10. [WIDGET] Repository Node   — Connected node in a branching layout
+ *
+ * These widgets must be visually consistent across ALL MakerFirst touchpoints:
+ * landing page, banners, business cards, and future mobile app.
+ *
+ * ANTI-VIBE-CODED RULES:
+ * - No purple gradients. Orange (#FF6B00) is our ONLY accent.
+ * - No sparkle emojis or decorative emoji anywhere.
+ * - No fake testimonials.
+ * - No hover animations that distort layout (max 2px shift, 150ms).
+ * - No shadows except on floating overlays (use tonal layering instead).
+ * - 4px border radius MAX. We build machines, not pillows.
+ * - 8pt spacing grid ONLY. Zero random spacing.
+ * - Space Grotesk for display, Inter for body. No other fonts.
+ * - No 1px solid borders for sectioning. Use tonal shifts or ghost borders.
+ * - Every interactive element must function. No placeholder links.
+ */
+
 @theme {
   /* ── Spacing: 8pt grid ── */
-  --spacing-1: 4px;
-  --spacing-2: 8px;
-  --spacing-3: 12px;
-  --spacing-4: 16px;
-  --spacing-6: 24px;
-  --spacing-8: 32px;
-  --spacing-12: 48px;
-  --spacing-16: 64px;
-  --spacing-24: 96px;
-  --spacing-32: 128px;
+  --spacing-1: 8px;
+  --spacing-2: 16px;
+  --spacing-3: 24px;
+  --spacing-4: 32px;
+  --spacing-5: 40px;
+  --spacing-6: 48px;
+  --spacing-8: 64px;
+  --spacing-10: 80px;
+  --spacing-12: 96px;
+
+  /* ── Colors: The Industrial Palette ── */
+  /* Primary — Filament Orange (the only accent) */
+  --color-primary: #FF6B00;
+  --color-primary-tint: #ffb693;
+  --color-primary-container: #ff6b00;
+
+  /* Surface hierarchy — from deepest to highest */
+  --color-surface-dim: #0a0a0b;
+  --color-surface-lowest: #0e0e0e;
+  --color-surface-low: #131313;
+  --color-surface: #171717;
+  --color-surface-high: #1c1b1b;
+  --color-surface-highest: #222221;
+  --color-surface-container: #1a1a1a;
+
+  /* Content */
+  --color-on-surface: #e2e2e5;
+  --color-on-surface-variant: #8e8e93;
+
+  /* Blueprint / Tertiary */
+  --color-tertiary: #b6c4ff;
+  --color-on-tertiary-container: #002782;
+
+  /* Outlines */
+  --color-outline: #28282c;
+  --color-outline-variant: #3a3a3e;
 
   /* ── Typography ── */
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
 
+  --text-label-sm: 0.6875rem;
+  --text-label-sm--line-height: 1.4;
   --text-xs: 0.75rem;
   --text-xs--line-height: 1.6;
   --text-sm: 0.875rem;
@@ -32,43 +94,18 @@
   --text-3xl--line-height: 1.2;
   --text-4xl: 2.25rem;
   --text-4xl--line-height: 1.2;
-  --text-5xl: 3rem;
-  --text-5xl--line-height: 1.1;
-  --text-6xl: 3.75rem;
-  --text-6xl--line-height: 1.1;
+  --text-display: 3.5rem;
+  --text-display--line-height: 1.05;
+  --text-display-lg: 4.5rem;
+  --text-display-lg--line-height: 1.0;
 
-  /* ── Colors ── */
-  --color-brand-primary: #0f172a;
-  --color-brand-secondary: #334155;
-  --color-brand-accent: #f59e0b;
-  --color-brand-accent-hover: #d97706;
+  /* ── Border radius — Industrial: max 4px ── */
+  --radius-sm: 2px;
+  --radius: 4px;
+  --radius-lg: 4px;
 
-  --color-neutral-50: #f8fafc;
-  --color-neutral-100: #f1f5f9;
-  --color-neutral-200: #e2e8f0;
-  --color-neutral-300: #cbd5e1;
-  --color-neutral-400: #94a3b8;
-  --color-neutral-500: #64748b;
-  --color-neutral-600: #475569;
-  --color-neutral-700: #334155;
-  --color-neutral-800: #1e293b;
-  --color-neutral-900: #0f172a;
-  --color-neutral-950: #020617;
-
-  --color-success: #16a34a;
-  --color-warning: #f59e0b;
-  --color-error: #dc2626;
-
-  /* ── Border radius ── */
-  --radius-sm: 4px;
-  --radius: 8px;
-  --radius-lg: 12px;
-  --radius-full: 9999px;
-
-  /* ── Shadows ── */
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  /* ── Shadows (ONLY for floating overlays) ── */
+  --shadow-overlay: 0 8px 32px rgb(0 0 0 / 0.4), 0 0 0 1px rgb(255 107 0 / 0.04);
 
   /* ── Animation ── */
   --duration-fast: 150ms;
@@ -108,22 +145,21 @@ html {
 }
 
 body {
-  font-family: var(--font-sans);
-  color: var(--color-brand-primary);
-  background-color: var(--color-neutral-50);
+  font-family: var(--font-body);
+  color: var(--color-on-surface);
+  background-color: var(--color-surface-dim);
   line-height: 1.6;
+}
+
+::selection {
+  background-color: var(--color-primary);
+  color: #000000;
 }
 
 /* ── Focus styles ── */
 :focus-visible {
-  outline: 2px solid var(--color-brand-accent);
+  outline: 2px solid var(--color-primary);
   outline-offset: 2px;
-}
-
-/* ── Selection ── */
-::selection {
-  background-color: var(--color-brand-accent);
-  color: var(--color-brand-primary);
 }
 
 /* ── Skip link ── */
@@ -132,13 +168,204 @@ body {
   top: -100%;
   left: 16px;
   padding: 8px 16px;
-  background: var(--color-brand-primary);
-  color: var(--color-neutral-50);
+  background: var(--color-primary);
+  color: #000000;
   border-radius: var(--radius);
   z-index: 100;
-  font-weight: 500;
+  font-weight: 600;
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: var(--text-sm);
 }
 
 .skip-link:focus {
   top: 16px;
+}
+
+/* ======================================================================
+ * [WIDGET] Precision Grid
+ * Background grid pattern for technical depth.
+ * 32px major grid with 8px minor subdivisions.
+ * Use on section backgrounds via .precision-grid class.
+ * ====================================================================== */
+.precision-grid {
+  background-image:
+    linear-gradient(to right, rgb(255 107 0 / 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 107 0 / 0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* ======================================================================
+ * [WIDGET] Schematic Callout
+ * Leader line annotation: dot + 1px line + label.
+ * Position with absolute. Hover expands line from 0% to 100% width.
+ * ====================================================================== */
+.callout-line {
+  position: absolute;
+  background: var(--color-primary);
+  height: 1px;
+  transition: width var(--duration-normal) var(--ease-out);
+}
+
+.callout-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ======================================================================
+ * [WIDGET] Spec Sheet
+ * Technical data table — no divider lines.
+ * Use surface-low for zebra striping on alternating rows.
+ * All numerical data right-aligned, label-md font.
+ * ====================================================================== */
+
+/* ======================================================================
+ * [WIDGET] Version Badge
+ * Small metadata chip: status dot + label + optional hash.
+ * Use: <div class="version-badge"><span class="status-dot"></span>LABEL</div>
+ * ====================================================================== */
+.version-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-outline);
+  border-radius: var(--radius);
+  font-family: var(--font-display);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-on-surface-variant);
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* ======================================================================
+ * [WIDGET] Terminal Card
+ * Code/terminal preview card with window control dots.
+ * ====================================================================== */
+.terminal-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-outline);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.terminal-header {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--color-outline);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.terminal-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.terminal-body {
+  padding: 16px;
+  font-family: 'SF Mono', 'Cascadia Code', 'Fira Code', monospace;
+  font-size: 11px;
+  line-height: 1.8;
+  overflow-y: auto;
+}
+
+.terminal-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.terminal-scroll::-webkit-scrollbar-thumb {
+  background: var(--color-outline);
+}
+
+/* ======================================================================
+ * [WIDGET] Filament Accent
+ * Orange gradient strip/bar for CTA elements.
+ * Linear gradient from primary-tint to primary at 45deg.
+ * ====================================================================== */
+.filament-accent {
+  background: linear-gradient(135deg, var(--color-primary-tint), var(--color-primary));
+}
+
+/* ======================================================================
+ * [WIDGET] Technical Label
+ * Small uppercase tracking-widest label used for section IDs and metadata.
+ * ====================================================================== */
+.technical-label {
+  font-family: var(--font-display);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-primary);
+}
+
+/* ======================================================================
+ * [WIDGET] Ghost Border
+ * Subtle outline at ~15% opacity. Felt not seen.
+ * Use for accessibility boundaries instead of 1px solid borders.
+ * ====================================================================== */
+.ghost-border {
+  outline: 1px solid rgb(255 107 0 / 0.15);
+}
+
+/* ======================================================================
+ * [WIDGET] Workbench Floor
+ * Deepest surface background for "etched" content sections.
+ * ====================================================================== */
+
+/* ======================================================================
+ * [WIDGET] Repository Node
+ * Connected node in branching layout with primary-colored vertical track.
+ * ====================================================================== */
+.repo-track {
+  position: relative;
+}
+
+.repo-track::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--color-primary);
+  opacity: 0.3;
+}
+
+/* ── Scrollbar styling ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-surface-dim);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-outline);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-outline-variant);
 }
