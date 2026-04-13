@@ -202,9 +202,11 @@ body {
  * Position with absolute. Hover expands line from 0% to 100% width.
  * ====================================================================== */
 .callout-line {
-  position: absolute;
   background: var(--color-primary);
   height: 1px;
+  min-width: 20px;
+  width: 48px;
+  flex-shrink: 0;
   transition: width var(--duration-normal) var(--ease-out);
 }
 
