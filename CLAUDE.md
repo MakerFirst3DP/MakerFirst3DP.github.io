@@ -1,11 +1,17 @@
 # MakerFirst Landing Page
 
 ## Project
-Landing page for MakerFirst (makerfirst.ca) — consulting for Launch Hardware, AI Agents, Firmware Dev.
+Landing page for MakerFirst (makerfirst.ca) — 3D printable everyday gadgets for Makers.
+
+## Brand
+- Slogan: "One size doesn't fit all"
+- We create never-before-seen product categories, not optimized clones
+- Community-driven, open source (CERN-OHL-S license)
+- Makers are partners in design, not consumers
 
 ## Tech Stack
 - **Runtime/PM**: Bun (source ~/.bashrc or set PATH=$HOME/.bun/bin:$PATH)
-- **Framework**: Astro 5
+- **Framework**: Astro 6
 - **CSS**: Tailwind CSS 4 via @tailwindcss/vite
 - **Interactive**: Svelte 5 via @astrojs/svelte (use ONLY for client-side interactivity)
 - **Animations**: GSAP + ScrollTrigger (src/scripts/animations.ts)
@@ -20,30 +26,39 @@ Landing page for MakerFirst (makerfirst.ca) — consulting for Launch Hardware, 
 ## Architecture
 - `src/pages/` — File-based routing (index.astro = landing page)
 - `src/layouts/BaseLayout.astro` — HTML shell with meta tags, view transitions, font loading
-- `src/components/sections/` — Landing page sections (Hero, About, Services, etc.)
-- `src/components/` — Reusable UI components
-- `src/styles/global.css` — Design tokens (@theme block) + Tailwind import
-- `src/scripts/animations.ts` — GSAP parallax/scroll utilities
-- `public/` — Static assets (CNAME, favicon, images)
+- `src/components/sections/` — Landing page sections (Hero, Product, Manifesto, Community, BuildProtocol, CTA, Footer)
+- `src/components/Nav.astro` — Fixed top navigation
+- `src/styles/global.css` — Design tokens (@theme block) + widget CSS + Tailwind import
+- `src/scripts/animations.ts` — GSAP scroll utilities
+- `public/svg/` — Static SVG assets (logo, social, ui, decorative)
 
-## Design System
-See PROMPT.md for complete anti-vibe-coded design guidelines.
-Key rules: 8pt spacing grid, Inter font, 8px border-radius, small color palette, subtle animations only.
-Tokens defined in src/styles/global.css @theme block.
+## Design System — "The Digital Workbench"
+See `design/DESIGN.md` for full spec, `PROMPT.md` for anti-vibe-coded rules.
 
-## Skills (in .claude/skills/)
-- `/new-section <type>` — Add a landing page section (hero, about, services, trust, process, cta, footer)
-- `/design-review` — Audit against anti-vibe-coded checklist (PASS/FAIL report)
-- `/add-component <name>` — Create a reusable UI component
-- `/deploy` — Build, verify, and push to deploy
-- `/responsive-check` — Audit responsive design across breakpoints
-- `/create-svg <name>` — Create SVG assets following ICONS.md specs
+**Core rules:**
+- Dark industrial palette: Filament Orange (#FF6B00) is the ONLY accent
+- Space Grotesk (display) + Inter (body) fonts
+- 8pt spacing grid, 4px max border radius
+- No purple, no sparkles, no emoji, no fake testimonials
+- No 1px borders for sections — use tonal shifts or ghost borders
+- No random shadows — use tonal layering instead
+- Max 2px hover shift, 150ms transitions
+- Precision Grid background pattern on key sections
 
-## SVG Design Subsystem
-See ICONS.md for complete SVG specs and designer handoff notes.
-SVGs in src/assets/svg/ (logo, services, ui, social, decorative).
-Raw brand files for print in public/brand/.
-Use /create-svg skill to generate new SVGs.
+**10 Named Design Widgets** (must be consistent across website, banner, biz card, mobile app):
+1. Precision Grid — `.precision-grid`
+2. Schematic Callout — `.callout-dot`, `.callout-line`
+3. Spec Sheet — Technical data table (no dividers, zebra rows)
+4. Version Badge — `.version-badge`, `.status-dot`
+5. Terminal Card — `.terminal-card`, `.terminal-header`, `.terminal-body`
+6. Filament Accent — `.filament-accent`
+7. Technical Label — `.technical-label`
+8. Ghost Border — `.ghost-border`
+9. Workbench Floor — `--color-surface-lowest` bg
+10. Repository Node — `.repo-track`
+
+## Section Order
+Nav → Hero → Product → Manifesto → Community → BuildProtocol → CTA → Footer
 
 ## GitHub Pages
 - Source: GitHub Actions (configured via gh CLI)
