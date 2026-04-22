@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#FF6B00",
+                        "background": "#0A0A0B",
+                        "surface": "#121416",
+                        "surface-variant": "#1A1C1E",
+                        "outline": "#282A2C",
+                        "on-surface": "#E2E2E5",
+                        "on-surface-variant": "#A9A9A9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk", "sans-serif"],
+                        "body": ["Inter", "sans-serif"]
+                    },
+                    "spacing": {
+                        "1": "8px",
+                        "2": "16px",
+                        "3": "24px",
+                        "4": "32px",
+                        "5": "40px",
+                        "6": "48px",
+                        "8": "64px",
+                        "10": "80px",
+                        "12": "96px"
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Maker Widget: The Precision Grid */
+        .precision-grid {
+            background-image: 
+                linear-gradient(to right, rgba(255, 107, 0, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 107, 0, 0.05) 1px, transparent 1px);
+            background-size: 16px 16px;
+        }
+        
+        /* Maker Widget: Schematic Callouts (Leader Lines) */
+        .callout-line {
+            position: absolute;
+            background: #FF6B00;
+            height: 1px;
+        }
+        .callout-dot {
+            width: 6px;
+            height: 6px;
+            background: #FF6B00;
+            border-radius: 50%;
+        }
+
+        .terminal-scroll::-webkit-scrollbar {
+            width: 4px;
+        }
+        .terminal-scroll::-webkit-scrollbar-thumb {
+            background: #282A2C;
+        }
+    </style>
+</head>
+<!-- 
+    MAKER WIDGETS IMPLEMENTED:
+    1. "The Precision Grid": Applied to section backgrounds for technical depth.
+    2. "Schematic Callouts": used in 'Deep-Dive Tech Specs' for product features.
+    3. "Component Spec-Sheet": Data-heavy parameters for hardware.
+    4. "Version Control Badge": System metadata tracking.
+-->
+<body class="bg-background text-on-surface font-body selection:bg-primary selection:text-white antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-background/95 border-b border-outline backdrop-blur-sm">
+<div class="flex justify-between items-center px-4 h-16 w-full max-w-[1440px] mx-auto">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8">
+                {{DATA:TEXT:TEXT_2}}
+            </div>
+<span class="font-headline font-bold text-lg tracking-tighter uppercase">MakerFirst</span>
+</div>
+<div class="hidden md:flex gap-8 font-headline uppercase tracking-widest text-[11px] items-center">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Repository</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Standard Library</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Protocol</a>
+</div>
+<div class="flex items-center gap-4">
+<!-- Maker Widget: Version Control Badge -->
+<div class="hidden sm:flex items-center gap-2 px-2 py-1 bg-surface border border-outline rounded text-[10px] font-headline tracking-tighter text-on-surface-variant">
+<span class="text-primary">●</span> LIVE_MAINNET
+                <span class="opacity-30">|</span>
+                hash:7f2e1a
+            </div>
+<button class="font-headline uppercase tracking-widest text-[11px] text-primary hover:bg-primary/10 px-4 py-2 border border-primary/20 transition-all">
+                Partner Auth
+            </button>
+</div>
+</div>
+</nav>
+<main class="pt-16">
+<!-- The Laboratory Hero -->
+<section class="relative min-h-[80vh] flex flex-col justify-center precision-grid border-b border-outline overflow-hidden px-4">
+<div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+<div class="lg:col-span-7 space-y-6">
+<!-- Maker Widget: Version Control Badge -->
+<div class="inline-flex items-center gap-3 px-3 py-1 bg-primary/10 border border-primary/30 rounded">
+<span class="font-headline text-[10px] uppercase tracking-[0.2em] text-primary">Build v2.4.0-Stable</span>
+<span class="w-1 h-1 bg-primary rounded-full animate-pulse"></span>
+</div>
+<h1 class="font-headline text-6xl md:text-8xl font-bold tracking-tighter leading-[0.9] uppercase">
+                    One size <br/><span class="text-primary italic">doesn't</span> fit all.
+                </h1>
+<p class="max-w-xl text-lg text-on-surface-variant font-light leading-relaxed border-l-2 border-outline pl-4">
+                    Radically open hardware protocols for the modern workbench. We don't ship products; we deploy parameters. 
+                </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="px-8 py-4 bg-primary text-black font-headline font-bold uppercase tracking-widest hover:brightness-110 transition-all text-sm">
+                        Access Repository
+                    </button>
+<button class="px-8 py-4 bg-surface border border-outline text-on-surface font-headline font-bold uppercase tracking-widest hover:bg-surface-variant transition-all text-sm">
+                        View Schema
+                    </button>
+</div>
+</div>
+<div class="lg:col-span-5 relative hidden lg:block">
+<!-- Hero Visualized Schematic -->
+<div class="aspect-square border border-outline bg-surface relative p-4">
+<div class="absolute inset-0 precision-grid opacity-20"></div>
+<div class="relative w-full h-full flex items-center justify-center opacity-40">
+                         {{DATA:TEXT:TEXT_2}}
+                    </div>
+<div class="absolute top-4 left-4 font-headline text-[10px] text-primary uppercase">AXIS_X: 420.00mm</div>
+<div class="absolute bottom-4 right-4 font-headline text-[10px] text-primary uppercase">TOLERANCE: ±0.05</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Deep-Dive Tech Specs -->
+<section class="py-12 bg-surface border-b border-outline">
+<div class="max-w-7xl mx-auto px-4">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+<!-- Product Schematic View -->
+<div class="relative bg-background border border-outline p-8 group">
+<div class="absolute top-0 right-0 p-4 border-l border-b border-outline font-headline text-[10px] text-on-surface-variant">SHT 01 / REV B</div>
+<img alt="Air-Puck Distributor" class="w-full grayscale brightness-125 mix-blend-screen opacity-90 group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAddtQZY_PJVE1kqFYp2rUxAqBpVVTYZyVXMAKtcoQvbkHTixmjloMGNmGGM2MWj5dOkExyHlvZxYqXFPCna09bHT36gmWhPCwH_cmBJtpahLvGnxE0vnjzxhGC5K9EyKvzK8c5lZqOejXYDoBbgoHxHRkgrRgQ9MWKbzXfiiu2gXxaVLenwQl3QtnQeGToFdmqsJhCleDiSEBOYSXQ6st1wiZBgGG2peg14EOGrFlXOJAiGiij_LEy5Ueyr31E9J0SDJX_rIEGfD23"/>
+<!-- Maker Widget: Schematic Callouts -->
+<div class="absolute top-1/4 right-1/4 flex items-center gap-4">
+<div class="callout-dot"></div>
+<div class="w-16 callout-line"></div>
+<span class="font-headline text-[10px] uppercase tracking-widest text-primary bg-background px-2">Vortex_Chamber</span>
+</div>
+<div class="absolute bottom-1/3 left-1/3 flex items-center gap-4">
+<span class="font-headline text-[10px] uppercase tracking-widest text-primary bg-background px-2">Static_Dissipator</span>
+<div class="w-24 callout-line"></div>
+<div class="callout-dot"></div>
+</div>
+</div>
+<div class="space-y-8">
+<header class="space-y-2">
+<h2 class="font-headline text-xs uppercase tracking-[0.4em] text-primary">System Identification</h2>
+<h3 class="font-headline text-4xl font-bold uppercase tracking-tighter">Air-Puck Distributor MK.III</h3>
+<p class="text-on-surface-variant font-light leading-relaxed">
+                            Fluid dynamic optimization for dry particle distribution. Replaces mechanical WDT with precision air paths.
+                        </p>
+</header>
+<!-- Maker Widget: Component Spec-Sheet -->
+<div class="bg-background border border-outline overflow-hidden">
+<div class="px-4 py-2 border-b border-outline bg-surface-variant font-headline text-[10px] uppercase tracking-widest text-on-surface-variant">Physical Parameters</div>
+<table class="w-full text-left font-headline text-xs">
+<tbody><tr class="border-b border-outline">
+<th class="px-4 py-3 font-medium text-on-surface-variant uppercase tracking-wider">Material Protocol</th>
+<td class="px-4 py-3 text-on-surface">PETG-CF / PA12-CF</td>
+</tr>
+<tr class="border-b border-outline">
+<th class="px-4 py-3 font-medium text-on-surface-variant uppercase tracking-wider">Precision Tolerance</th>
+<td class="px-4 py-3 text-on-surface">± 0.05 mm</td>
+</tr>
+<tr class="border-b border-outline">
+<th class="px-4 py-3 font-medium text-on-surface-variant uppercase tracking-wider">Layer Height Opt.</th>
+<td class="px-4 py-3 text-on-surface">0.12 mm - 0.20 mm</td>
+</tr>
+<tr>
+<th class="px-4 py-3 font-medium text-on-surface-variant uppercase tracking-wider">Estimated Print</th>
+<td class="px-4 py-3 text-on-surface">2h 14m @ 250mm/s</td>
+</tr>
+</tbody></table>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-3 px-6 py-4 bg-white text-black font-headline font-bold uppercase tracking-widest text-xs hover:bg-on-surface transition-all">
+<span class="material-symbols-outlined text-sm">download</span>
+                            Download STL
+                        </button>
+<button class="flex items-center justify-center gap-3 px-6 py-4 bg-surface border border-outline text-on-surface font-headline font-bold uppercase tracking-widest text-xs hover:bg-surface-variant transition-all">
+<span class="material-symbols-outlined text-sm">code</span>
+                            Source SCAD
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- The 'Fork' Stream -->
+<section class="py-12 bg-background precision-grid">
+<div class="max-w-7xl mx-auto px-4">
+<div class="flex flex-col md:flex-row justify-between items-baseline gap-4 mb-8">
+<div class="space-y-2">
+<h2 class="font-headline text-xs uppercase tracking-[0.4em] text-primary">Commit History</h2>
+<h3 class="font-headline text-3xl font-bold uppercase tracking-tighter">Active Branches</h3>
+</div>
+<div class="font-headline text-[10px] uppercase tracking-widest text-on-surface-variant">
+                    Displaying 4 active forks / total: 890
+                </div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+<!-- Terminal Card 1 -->
+<div class="md:col-span-2 bg-surface border border-outline overflow-hidden flex flex-col h-64">
+<div class="px-3 py-2 border-b border-outline flex items-center justify-between">
+<div class="flex gap-1.5">
+<div class="w-2 h-2 rounded-full bg-red-500/30"></div>
+<div class="w-2 h-2 rounded-full bg-yellow-500/30"></div>
+<div class="w-2 h-2 rounded-full bg-green-500/30"></div>
+</div>
+<span class="font-headline text-[9px] uppercase tracking-widest text-on-surface-variant">branch: stealth-carbon-v2.4</span>
+</div>
+<div class="p-4 flex-1 terminal-scroll overflow-y-auto font-mono text-[11px] leading-tight space-y-1">
+<div class="text-primary">$ git diff --stat master</div>
+<div class="text-on-surface-variant">main.stl | 24 +-</div>
+<div class="text-on-surface-variant">params.json | 112 +++++++++-</div>
+<div class="text-green-500 opacity-80">+ Added reinforced desk clamp geometry</div>
+<div class="text-green-500 opacity-80">+ Increased wall thickness by 0.4mm</div>
+<div class="text-on-surface mt-4">@JeremyDesign: Optimizing for 10kg vertical load.</div>
+</div>
+<div class="p-3 border-t border-outline flex justify-between items-center bg-background/50">
+<span class="text-[10px] font-headline text-on-surface-variant uppercase">Updated 2m ago</span>
+<button class="text-primary font-headline text-[10px] uppercase font-bold hover:underline">View Fork</button>
+</div>
+</div>
+<!-- Terminal Card 2 -->
+<div class="bg-surface border border-outline p-4 flex flex-col justify-between group cursor-pointer hover:border-primary/40 transition-all">
+<div class="space-y-3">
+<div class="w-8 h-8 flex items-center justify-center bg-background border border-outline group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-primary text-lg">fork_right</span>
+</div>
+<h4 class="font-headline text-sm font-bold uppercase tracking-wider text-on-surface">Wide-Base v1.2</h4>
+<p class="text-[11px] text-on-surface-variant leading-normal">Optimization branch for industrial 58.5mm baskets.</p>
+</div>
+<div class="pt-4 border-t border-outline/50 flex justify-between items-center">
+<span class="text-[9px] font-headline text-on-surface-variant uppercase">Commits: 124</span>
+<span class="material-symbols-outlined text-sm text-on-surface-variant group-hover:text-primary transition-colors">arrow_right_alt</span>
+</div>
+</div>
+<!-- Terminal Card 3 -->
+<div class="bg-surface border border-outline p-4 flex flex-col justify-between group cursor-pointer hover:border-primary/40 transition-all">
+<div class="space-y-3">
+<div class="w-8 h-8 flex items-center justify-center bg-background border border-outline group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-primary text-lg">settings_suggest</span>
+</div>
+<h4 class="font-headline text-sm font-bold uppercase tracking-wider text-on-surface">Zero-Static Mod</h4>
+<p class="text-[11px] text-on-surface-variant leading-normal">Material preset integration for conductive filaments.</p>
+</div>
+<div class="pt-4 border-t border-outline/50 flex justify-between items-center">
+<span class="text-[9px] font-headline text-on-surface-variant uppercase">Active Contributors: 12</span>
+<span class="material-symbols-outlined text-sm text-on-surface-variant group-hover:text-primary transition-colors">arrow_right_alt</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Materiality & Assembly -->
+<section class="py-12 bg-surface-variant border-y border-outline">
+<div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<span class="font-headline text-xl font-bold text-primary">01</span>
+<h4 class="font-headline text-sm font-bold uppercase tracking-widest">Slicing Protocol</h4>
+</div>
+<p class="text-[12px] text-on-surface-variant leading-relaxed">
+                    Use high-temperature PETG-CF. 3 wall loops minimum for structural integrity. Infill: 25% Gyroid. No support required for internal air channels.
+                </p>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<span class="font-headline text-xl font-bold text-primary">02</span>
+<h4 class="font-headline text-sm font-bold uppercase tracking-widest">Post-Processing</h4>
+</div>
+<p class="text-[12px] text-on-surface-variant leading-relaxed">
+                    Heat-treat parts at 65°C for 2 hours to relieve internal printing stresses. Surface finish must be matte to reduce static cling.
+                </p>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<span class="font-headline text-xl font-bold text-primary">03</span>
+<h4 class="font-headline text-sm font-bold uppercase tracking-widest">Final Assembly</h4>
+</div>
+<p class="text-[12px] text-on-surface-variant leading-relaxed">
+                    Press-fit the bearing into the upper housing. Secure with M3x12 socket head screws. Torque to exactly 1.2Nm.
+                </p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-background border-t border-outline">
+<div class="w-full py-10 px-4 max-w-[1440px] mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+<div class="md:col-span-4 space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-6 h-6">
+                        {{DATA:TEXT:TEXT_2}}
+                    </div>
+<span class="font-headline font-bold text-base tracking-tighter uppercase">MakerFirst</span>
+</div>
+<p class="text-[11px] text-on-surface-variant max-w-xs leading-relaxed uppercase tracking-wider">
+                    Distributed manufacturing protocol v2.4.0. Open-source hardware for the age of precision.
+                </p>
+</div>
+<div class="md:col-span-8 flex flex-wrap gap-x-12 gap-y-4 md:justify-end">
+<div class="space-y-3">
+<span class="block font-headline text-[10px] uppercase tracking-widest text-primary">Registry</span>
+<nav class="flex flex-col gap-2">
+<a class="text-[11px] text-on-surface-variant hover:text-on-surface uppercase" href="#">Design Index</a>
+<a class="text-[11px] text-on-surface-variant hover:text-on-surface uppercase" href="#">Standards</a>
+<a class="text-[11px] text-on-surface-variant hover:text-on-surface uppercase" href="#">Hardware Lib</a>
+</nav>
+</div>
+<div class="space-y-3">
+<span class="block font-headline text-[10px] uppercase tracking-widest text-primary">Governance</span>
+<nav class="flex flex-col gap-2">
+<a class="text-[11px] text-on-surface-variant hover:text-on-surface uppercase" href="#">License</a>
+<a class="text-[11px] text-on-surface-variant hover:text-on-surface uppercase" href="#">Contributors</a>
+<a class="text-[11px] text-on-surface-variant hover:text-on-surface uppercase" href="#">Protocols</a>
+</nav>
+</div>
+</div>
+</div>
+<div class="mt-10 pt-6 border-t border-outline flex flex-col md:flex-row justify-between items-center gap-4 text-[9px] font-headline text-on-surface-variant uppercase tracking-[0.2em]">
+<span>© 2024 MakerFirst. All schemas released under M-CPL License.</span>
+<span class="text-on-surface">Uptime: 99.99% // Latency: 42ms</span>
+</div>
+</div>
+</footer>
+</body></html>
