@@ -93,6 +93,22 @@ ${bannerCss}
       import html2canvas from 'html2canvas';
       import { jsPDF } from 'jspdf';
 
+      function lockBannerFrame(containerSelector) {
+        const container = document.querySelector(containerSelector);
+        const canvas = document.getElementById('bannerCanvas');
+        if (!container || !canvas) return;
+
+        const styles = window.getComputedStyle(container);
+        const availableHeight =
+          container.clientHeight - parseFloat(styles.paddingTop) - parseFloat(styles.paddingBottom);
+
+        const width = Math.max(1, Math.floor(availableHeight / 3));
+        const height = width * 3;
+
+        canvas.style.setProperty('--bs-render-width', `${width}px`);
+        canvas.style.setProperty('--bs-render-height', `${height}px`);
+      }
+
       const savedState = sessionStorage.getItem('makerfirst-banner-state');
       if (savedState) {
         const state = JSON.parse(savedState);
@@ -120,6 +136,8 @@ ${bannerCss}
       async function downloadPdf() {
         const canvasRoot = document.getElementById('bannerCanvas');
         if (!canvasRoot) return;
+
+        lockBannerFrame('.bs-export-root');
 
         if (document.fonts?.ready) {
           try {
@@ -161,6 +179,9 @@ ${bannerCss}
           });
         });
       }
+
+      window.addEventListener('load', () => lockBannerFrame('.bs-export-root'));
+      window.addEventListener('resize', () => lockBannerFrame('.bs-export-root'));
     </script>
   </body>
 </html>
