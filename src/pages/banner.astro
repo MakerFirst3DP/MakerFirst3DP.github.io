@@ -1,0 +1,101 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BannerCanvas from '../components/BannerCanvas.astro';
+import '../styles/banner.css';
+---
+
+<BaseLayout title="Banner Studio — MakerFirst">
+  <div class="bs-wrap">
+    <header class="bs-panel-head">
+      <div class="bs-panel-brand">
+        <img src="/logo.png" width="28" height="28" alt="" class="rounded-[2px]" />
+        <span class="font-display font-bold text-base tracking-tighter text-on-surface">MakerFirst</span>
+      </div>
+      <div class="bs-panel-meta">
+        <p class="bs-panel-kicker">Banner Studio</p>
+        <p class="bs-panel-sub">24×72 ratio · print ready</p>
+      </div>
+      <div class="version-badge">
+        <span class="status-dot"></span>
+        OPEN SOURCE
+      </div>
+    </header>
+
+    <section class="bs-controls-col bs-controls-col-a">
+      <div class="bs-field">
+        <label>Sponsor Label</label>
+        <input type="text" data-target="sponsorLabel" value="SPONSOR LOGO" />
+      </div>
+      <div class="bs-field">
+        <label>Slogan</label>
+        <input type="text" data-target="slogan" value="One size doesn't fit all" />
+      </div>
+      <div class="bs-field">
+        <label>CAD Label</label>
+        <input type="text" data-target="cadLabel" value="MF AIRSHAKER REV C / ONSHAPE CAD" />
+      </div>
+      <div class="bs-field">
+        <label>Callout 1</label>
+        <input type="text" data-target="callout1" value="VORTEX CHAMBER" />
+      </div>
+      <div class="bs-field">
+        <label>Callout 2</label>
+        <input type="text" data-target="callout2" value="AIR PUMP" />
+      </div>
+    </section>
+
+    <section class="bs-controls-col bs-controls-col-b">
+      <div class="bs-field">
+        <label>Callout 3</label>
+        <input type="text" data-target="callout3" value="PRECISION NOZZLE" />
+      </div>
+      <div class="bs-field">
+        <label>Headline</label>
+        <input type="text" data-target="message1" value="NEW CATEGORIES" />
+      </div>
+      <div class="bs-field">
+        <label>Subhead</label>
+        <input type="text" data-target="message2" value="NOT BETTER CLONES" />
+      </div>
+      <div class="bs-field">
+        <label>Body Copy</label>
+        <input type="text" data-target="description" value="Open-source 3D printable gadgets built with makers, not for them." />
+      </div>
+      <div class="bs-field">
+        <label>Website</label>
+        <input type="text" data-target="website" value="makerfirst.ca" />
+      </div>
+      <div class="bs-field">
+        <label>License Tag</label>
+        <input type="text" data-target="licenseTag" value="CERN-OHL-S LICENSE" />
+      </div>
+    </section>
+
+    <div class="bs-actions">
+      <button class="bs-print" onclick="openPdfView()">Save PDF</button>
+      <p class="bs-hint">Opens a dedicated export page and downloads a PDF directly from the rendered banner.</p>
+    </div>
+
+    <main class="bs-stage">
+      <BannerCanvas />
+    </main>
+  </div>
+
+  <script is:inline>
+    function openPdfView() {
+      const state = {};
+      document.querySelectorAll('.bs-field input[data-target]').forEach((input) => {
+        state[input.dataset.target] = input.value;
+      });
+      sessionStorage.setItem('makerfirst-banner-state', JSON.stringify(state));
+      window.open('/banner-export?pdf=1', '_blank');
+    }
+
+    document.querySelectorAll('.bs-field input[data-target]').forEach((input) => {
+      input.addEventListener('input', (event) => {
+        const target = document.querySelector(`[data-field="${event.target.dataset.target}"]`);
+        if (target) target.textContent = event.target.value;
+      });
+    });
+  </script>
+</BaseLayout>

@@ -1,0 +1,166 @@
+---
+import BannerCanvas from '../components/BannerCanvas.astro';
+import bannerCss from '../styles/banner.css?raw';
+
+const exportCss = `
+:root {
+  --color-primary: #FF6B00;
+  --color-primary-tint: #ffb693;
+  --color-surface-dim: #0a0a0b;
+  --color-surface-lowest: #0e0e0e;
+  --color-surface-low: #131313;
+  --color-on-surface: #e2e2e5;
+  --color-on-surface-variant: #8e8e93;
+  --color-outline: #28282c;
+  --font-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --radius: 4px;
+  --duration-fast: 150ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --shadow-overlay: 0 8px 32px rgb(0 0 0 / 0.4), 0 0 0 1px rgb(255 107 0 / 0.04);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--color-surface-dim);
+  color: var(--color-on-surface);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+}
+
+.ghost-border {
+  outline: 1px solid rgb(255 107 0 / 0.15);
+}
+
+.technical-label {
+  font-family: var(--font-display);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-primary);
+}
+
+.filament-accent {
+  background: linear-gradient(135deg, var(--color-primary-tint), var(--color-primary));
+}
+
+.bs-export-root {
+  --bs-frame-width: min(340px, calc((100vh - 40px) / 3));
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 24px;
+  background: var(--color-surface-dim);
+}
+
+.bs-export-root .bs-canvas {
+  width: var(--bs-frame-width);
+}
+
+${bannerCss}
+`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Banner Export — MakerFirst</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style is:global set:html={exportCss}></style>
+  </head>
+  <body>
+    <div class="bs-export-root">
+      <BannerCanvas />
+    </div>
+
+    <script>
+      import html2canvas from 'html2canvas';
+      import { jsPDF } from 'jspdf';
+
+      const savedState = sessionStorage.getItem('makerfirst-banner-state');
+      if (savedState) {
+        const state = JSON.parse(savedState);
+        Object.entries(state).forEach(([key, value]) => {
+          const target = document.querySelector(`[data-field="${key}"]`);
+          if (target) target.textContent = value;
+        });
+      }
+
+      async function waitForImages() {
+        const images = Array.from(document.images).filter((img) => !img.complete);
+        if (!images.length) return;
+
+        await Promise.allSettled(
+          images.map(
+            (img) =>
+              new Promise((resolve) => {
+                img.addEventListener('load', resolve, { once: true });
+                img.addEventListener('error', resolve, { once: true });
+              }),
+          ),
+        );
+      }
+
+      async function downloadPdf() {
+        const canvasRoot = document.getElementById('bannerCanvas');
+        if (!canvasRoot) return;
+
+        if (document.fonts?.ready) {
+          try {
+            await document.fonts.ready;
+          } catch {}
+        }
+
+        await waitForImages();
+        await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+
+        const rect = canvasRoot.getBoundingClientRect();
+        const targetWidthPx = 2400;
+        const scale = Math.max(4, Math.min(8, targetWidthPx / rect.width));
+
+        const rendered = await html2canvas(canvasRoot, {
+          backgroundColor: '#0e0e0e',
+          scale,
+          useCORS: true,
+          logging: false,
+          removeContainer: true,
+        });
+
+        const imageData = rendered.toDataURL('image/png');
+        const pdf = new jsPDF({
+          orientation: 'portrait',
+          unit: 'in',
+          format: [24, 72],
+          compress: true,
+        });
+
+        pdf.addImage(imageData, 'PNG', 0, 0, 24, 72, undefined, 'FAST');
+        pdf.save('makerfirst-banner.pdf');
+      }
+
+      if (new URLSearchParams(window.location.search).get('pdf') === '1') {
+        window.addEventListener('load', () => {
+          downloadPdf().catch((error) => {
+            console.error('Failed to generate PDF', error);
+          });
+        });
+      }
+    </script>
+  </body>
+</html>
